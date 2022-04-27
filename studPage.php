@@ -14,7 +14,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">student dan Staff</a>
+            <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -53,20 +53,15 @@
                                 Ketersediaan kaunselor pada kalendar
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="statistik.php">
+                            <a class="nav-link" href="temujanji.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Temujanji
                             </a>
-                            <a class="nav-link" href="kalendar.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Kalendar
-                            </a>
-                           
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
+                        <div class="small">Selamat datang:</div>
+                        Pelanggan
                     </div>
                 </nav>
             </div>
