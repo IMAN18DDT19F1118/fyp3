@@ -69,39 +69,62 @@
                             <li class="breadcrumb-item active">Borang TemuJanji</li>
                         </ol>
                             <div class="row">
-                                <form action="temuprocess.php" method="post">
-                                    <label for="temujanji">TemuJanji:</label>
+                                <div class="wrapper">
+                                    <div class="temujanji_form">
+                                        <!--Title-->
+                                        <div class="title">
+                                            Temu Janji Kaunseling
+                                        </div>
+                                        
+                                        <!--Form-->
+                                        <form action="temuprocess.php" method="post">
+                                            <div class="form_wrap">
 
-                                        <br>
-                                            <input type="date" id="temujanji" name="date" required>
-                                            <br><br>
-                                                <select name="schedule_time" required>
-                                                    <option>-Select Time-</option>
-                                                    <option value="08:00">08:00 am</option>
-                                                    <option value="08:30">08:30 am</option>
-                                                    <option value="09:00">09:00 am</option>
-                                                    <option value="09:30">09:30 am</option>
-                                                    <option value="10:00">10:00 am</option>
-                                                    <option value="10:30">10:30 am</option>
-                                                    <option value="11:00">11:00 am</option>
-                                                    <option value="11:30">11:30 am</option>
-                                                    <option value="12:00">12:00 pm</option>
-                                                    <option value="12:30">12:30 pm</option>
-                                                    <option value="1:00">1:00 pm</option>
-                                                    <option value="1:30">1:30 pm</option>
-                                                    <option value="2:00">2:00 pm</option>
-                                                    <option value="2:30">2:30 pm</option>
-                                                    <option value="3:00">3:00 pm</option>
-                                                    <option value="3:30">3:30 pm</option>
-                                                    <option value="4:00">4:00 pm</option>
-                                                    <option value="4:30">4:30 pm</option>
-                                                </select> 
-                                            <br><br>
-                                        <input type="submit" value="Submit" name="submit" >
-                                </form>
-                            </div>
-                        
-                            
+                                                <div class="input_wrap">
+                                                    <label for="temujanji">TemuJanji</label>
+
+                                                    <input type="date" id="temujanji" name="date" required>
+                                                </div>
+
+                                                <div class="input_wrap">
+                                                    <label for=masa>Masa</label>
+                                                    
+                                                    <select name="schedule_time" required>
+                                                        <option>-Select Time-</option>
+                                                        <option value="08:00">08:00 am</option>
+                                                        <option value="08:30">08:30 am</option>
+                                                        <option value="09:00">09:00 am</option>
+                                                        <option value="09:30">09:30 am</option>
+                                                        <option value="10:00">10:00 am</option>
+                                                        <option value="10:30">10:30 am</option>
+                                                        <option value="11:00">11:00 am</option>
+                                                        <option value="11:30">11:30 am</option>
+                                                        <option value="12:00">12:00 pm</option>
+                                                        <option value="12:30">12:30 pm</option>
+                                                        <option value="1:00">1:00 pm</option>
+                                                        <option value="1:30">1:30 pm</option>
+                                                        <option value="2:00">2:00 pm</option>
+                                                        <option value="2:30">2:30 pm</option>
+                                                        <option value="3:00">3:00 pm</option>
+                                                        <option value="3:30">3:30 pm</option>
+                                                        <option value="4:00">4:00 pm</option>
+                                                        <option value="4:30">4:30 pm</option>
+                                                    </select> 
+                                                </div>
+
+                                                <!--Submit button-->
+                                                <div class="input_wrap">
+                                                    <input type="submit" value="Submit" class="submit_btn" name="submit">
+
+                                                    <button type="reset" value="Reset" class="breset">RESET</button>
+                                                </div>
+                                            </div>
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>                                                   
                     </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">
