@@ -9,8 +9,8 @@
     <meta name="author" content="" />
     <title>Borang TemuJanji</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
     <link href="temu.css" rel="stylesheet" />
-    <link href="style.css" rel="stylesheet"/>
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -79,7 +79,7 @@
                             <div class="temujanji_form">
                                 <!--Title-->
                                 <div class="title">
-                                    Temu Janji Kaunseling
+                                    <h1>Temu Janji Kaunseling<h1>
                                 </div>
                                 <br><br>
                                 <!--Form-->
@@ -87,15 +87,15 @@
                                     <div class="form_wrap">
 
                                         <div class="input_wrap">
-                                            <label for="temujanji">TemuJanji</label>
+                                        <center><label for="temujanji">TemuJanji</label></center>
 
-                                            <input type="date" id="temujanji" name="date" required>
+                                            <center><input type="date" id="temujanji" name="date" required></center>
                                         </div>
 
                                         <div class="input_wrap">
-                                            <label for=masa>Masa</label>
+                                        <center><label for=masa>Masa</label></center>
 
-                                            <select name="schedule_time" required>
+                                        <center><select name="schedule_time" required></center>
                                                 <option>-Select Time-</option>
                                                 <option value="08:00">08:00 am</option>
                                                 <option value="08:30">08:30 am</option>
@@ -121,8 +121,8 @@
                                         <!--Submit button-->
                                         <div class="input_wrap">
                                             <input type="submit" value="Submit" class="submit_btn" name="submit">
-
-                                            <button type="reset" value="Reset" class="breset">RESET</button>
+                                            <br><br>
+                                            <input type="reset" value="Reset" class="reset_btn">
                                         </div>
                                     </div>
                                 </form>

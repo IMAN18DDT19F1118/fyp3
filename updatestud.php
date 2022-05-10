@@ -1,3 +1,12 @@
+<?php
+include('connection.php');
+
+$idusr=$_GET["id"];
+$dis_usr="SELECT * FROM temu_janji WHERE id='$idusr'";
+$resultusr=$conn->query($dis_usr);
+
+$row=$resultusr->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -6,7 +15,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Penasihat Akedemik</title>
+        <title>Page Pelajar</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -14,7 +23,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Penasihat Akedemik</a>
+            <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -39,7 +48,7 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="PaPage.php">
+                            <a class="nav-link" href="studPage.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Dashboard
                             </a>
@@ -49,19 +58,15 @@
                                 Ketersediaan kaunselor pada kalendar
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
-                            <a class="nav-link" href="temujanjipa.php">
+                            <a class="nav-link" href="temujanji.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Temujanji
                             </a>
-                            <a class="nav-link" href="maklumatPe.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
-                            </a>
-                            <a class="nav-link" href="rekord.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
-                            </a>
                         </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Selamat datang:</div>
+                        Pelanggan
                     </div>
                 </nav>
             </div>
@@ -73,7 +78,48 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <h1>Selamat Datang</h1>
+                        <center><ins><b>mengubah masa dan tarikh</b><ins></center>
+
+<form name="temujanji" action="updateprocess.php" method="post">
+    <center>
+        <br>
+        <b>Tarikh : </b>
+        <input type="date" name="date" value="<?php echo $row["tarikh"];?>" required>
+        <br><br>
+
+        <b>Masa : </b>
+        <select name="schedule_time" <?php echo $row["masa"];?> required>
+                                        <option>-Select Time-</option>
+                                        <option value="08:00">08:00 am</option>
+                                        <option value="08:30">08:30 am</option>
+                                        <option value="09:00">09:00 am</option>
+                                        <option value="09:30">09:30 am</option>
+                                        <option value="10:00">10:00 am</option>
+                                        <option value="10:30">10:30 am</option>
+                                        <option value="11:00">11:00 am</option>
+                                        <option value="11:30">11:30 am</option>
+                                        <option value="12:00">12:00 pm</option>
+                                        <option value="12:30">12:30 pm</option>
+                                        <option value="1:00">1:00 pm</option>
+                                        <option value="1:30">1:30 pm</option>
+                                        <option value="2:00">2:00 pm</option>
+                                        <option value="2:30">2:30 pm</option>
+                                        <option value="3:00">3:00 pm</option>
+                                        <option value="3:30">3:30 pm</option>
+                                        <option value="4:00">4:00 pm</option>
+                                        <option value="4:30">4:30 pm</option>
+                                    </select>
+        <br><br>
+    </center>
+
+    <br>
+
+    <center>
+        <input type="submit" name="Submit" value="Update">
+        <input type="reset" value="Reset">
+        <input type="hidden" name="id" value="<?php echo $row["ID"];?>">
+    </center>
+</form>
                         </div>
                         
                             

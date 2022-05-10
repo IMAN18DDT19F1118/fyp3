@@ -9,6 +9,7 @@
         <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
+        <link href="temu.css" rel="stylesheet"/>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -63,6 +64,7 @@
                             </a>
                         </div>
                     </div>
+                
                 </nav>
             </div>
             <div id="layoutSidenav_content">
@@ -70,13 +72,65 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Borang TemuJanji</li>
                         </ol>
                         <div class="row">
-                            <h1>Selamat Datang</h1>
+                            <div class="wrapper">
+                                <div class="temujanji_form">
+                                    <!--Title-->
+                                    <div class="title">
+                                        <h1>Temu Janji Kaunseling<h1>
+                                    </div>
+                                    <br><br>
+                                    <!--Form-->
+                                    <form action="temuprocess2.php" method="post">
+                                        <div class="form_wrap">
+
+                                            <div class="input_wrap">
+                                            <center><label for="temujanji">TemuJanji</label></center>
+
+                                                <center><input type="date" id="temujanji" name="date" required></center>
+                                            </div>
+
+                                            <div class="input_wrap">
+                                            <center><label for=masa>Masa</label></center>
+
+                                            <center><select name="schedule_time" required></center>
+                                                    <option>-Select Time-</option>
+                                                    <option value="08:00">08:00 am</option>
+                                                    <option value="08:30">08:30 am</option>
+                                                    <option value="09:00">09:00 am</option>
+                                                    <option value="09:30">09:30 am</option>
+                                                    <option value="10:00">10:00 am</option>
+                                                    <option value="10:30">10:30 am</option>
+                                                    <option value="11:00">11:00 am</option>
+                                                    <option value="11:30">11:30 am</option>
+                                                    <option value="12:00">12:00 pm</option>
+                                                    <option value="12:30">12:30 pm</option>
+                                                    <option value="1:00">1:00 pm</option>
+                                                    <option value="1:30">1:30 pm</option>
+                                                    <option value="2:00">2:00 pm</option>
+                                                    <option value="2:30">2:30 pm</option>
+                                                    <option value="3:00">3:00 pm</option>
+                                                    <option value="3:30">3:30 pm</option>
+                                                    <option value="4:00">4:00 pm</option>
+                                                    <option value="4:30">4:30 pm</option>
+                                                </select>
+                                            </div>
+
+                                            <!--Submit button-->
+                                            <div class="input_wrap">
+                                                <input type="submit" value="Submit" class="submit_btn" name="submit">
+                                                <br><br>
+                                                <input type="reset" value="Reset" class="reset_btn">
+                                            </div>
+                                        </div>
+                                    </form>
+
+
+                                </div>
+                            </div>
                         </div>
-                        
-                            
                     </div>
                 </main>
             </div>

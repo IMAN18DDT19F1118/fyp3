@@ -10,5 +10,5 @@ $resultdelete=$conn->query($deletedata);
 
 <script>
 
-window.location="displaystud.php"    
+window.location="displaypa.php"    
 </script>

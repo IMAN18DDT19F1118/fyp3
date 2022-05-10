@@ -1,17 +1,49 @@
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM temu_janji";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
+        
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
+    <title>Paparan Temujanji</title>
+</head>
+<style>
+table {
+  border-collapse: collapse;
+}
+ th {
+  background: lightblue;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+</style>
+
+<body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Penasihat Akedemik</a>
@@ -73,7 +105,40 @@
                             <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
-                            <h1>Selamat Datang</h1>
+                        <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Tarikh TemuJanji</th>
+            <th>Masa</th>
+            <th>Action</th>
+        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+                    <td><?php echo $row["ID"]; ?></td>
+                    <td><?php echo $row["tarikh"]; ?></td>                   
+                    <td><?php echo $row["masa"]; ?></td>               
+                    <td>
+                        <a href="updatepa.php?id=<?php echo $row["ID"]; ?>">Update</a>
+
+                        <a href="deletetemu2.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+        else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
                         </div>
                         
                             

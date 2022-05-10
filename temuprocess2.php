@@ -16,7 +16,7 @@ $conn->close();
 ?>
 <script>
 //direct user to page display.php
-    window.location="displaystud.php"
+    window.location="displaypa.php"
 </script>
     <?php
 ?>
