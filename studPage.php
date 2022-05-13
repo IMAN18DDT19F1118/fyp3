@@ -44,7 +44,7 @@
                                 Halaman Utama
                             </a>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="Klist.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ketersediaan kaunselor pada list
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
