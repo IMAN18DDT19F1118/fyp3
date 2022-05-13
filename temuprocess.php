@@ -5,6 +5,7 @@ include('connection.php');
 $date=$_POST['date'];
 $time=$_POST['schedule_time'];
 
+
 $sql="INSERT INTO temu_janji(tarikh,masa) VALUE ('$date','$time')";
 if($conn->query($sql)===TRUE){
     echo"New Record created successfully";

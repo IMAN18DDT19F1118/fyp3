@@ -5,7 +5,9 @@ include('connection.php');
 $date=$_POST['date'];
 $time=$_POST['schedule_time'];
 
-$sql="INSERT INTO temu_janji(tarikh,masa) VALUE ('$date','$time')";
+$uidt=$_POST['id'];//drp input hidden
+
+$sql="UPDATE temu_janji SET tarikh='$date', masa='$time' where id='$uidt'";
 if($conn->query($sql)===TRUE){
     echo"New Record created successfully";
 }

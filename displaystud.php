@@ -70,8 +70,8 @@ tr:hover {
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
                             <a class="nav-link" href="studPage.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                Dashboard
+                                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                                Halaman Utama
                             </a>
 
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
@@ -101,7 +101,6 @@ tr:hover {
                         <div class="row">
                         <table border="1">
         <tr>
-            <th>ID</th>
             <th>Tarikh TemuJanji</th>
             <th>Masa</th>
             <th>Action</th>
@@ -115,7 +114,7 @@ tr:hover {
                 ?>
 
                 <tr>
-                    <td><?php echo $row["ID"]; ?></td>
+
                     <td><?php echo $row["tarikh"]; ?></td>                   
                     <td><?php echo $row["masa"]; ?></td>               
                     <td>

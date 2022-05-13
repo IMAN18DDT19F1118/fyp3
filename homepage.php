@@ -6,15 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Page Pelajar</title>
+        <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
+        <link href="stylea.css" rel="stylesheet"/>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
+            <a class="navbar-brand ps-3" href="index.html">HALAMAN UTAMA</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -22,14 +23,6 @@
             </form>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#!">Settings</a></li>
-                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
-                        <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="Index.php">Logout</a></li>
-                    </ul>
                 </li>
             </ul>
         </nav>
@@ -38,32 +31,22 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="studPage.php">
+                            <a class="nav-link" href="homepage.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Halaman Utama
                             </a>
 
-                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Ketersediaan kaunselor pada list
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                            </a>
-                            <a class="nav-link" href="temujanji.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Temujanji
+                            <a class="nav-link" href="loginpage.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Log Masuk
                             </a>
                         </div>
-                    </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Selamat datang:</div>
-                        Pelanggan
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                <div class="container-fluid px-4">
+                    <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Pengurusan Kaunseling Politeknik Tuanku Syed Sirajuddin</h1>
                         <div class="main-banner" id="main-banner">
                             
@@ -170,8 +153,12 @@
                         </div>
                         <center><h5>Carta Organisasi</h5></center>
                         <div>
-                        <center><img src="img/carta.jpg" width="700" height="600"></center>
+                        <center><img src="img/carta.jpg" width="500" height="500"></center>
                         </div>
+                        
+                        
+                            
+                    </div>
                 </main>
             </div>
         </div>
