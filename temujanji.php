@@ -53,11 +53,9 @@
                                 Halaman Utama
                             </a>
 
-                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse"
-                            data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                            Ketersediaan kaunselor pada list
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            <a class="nav-link" href="Klist.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Ketersediaan kaunselor pada list
                         </a>
                         <a class="nav-link" href="temujanji.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -85,6 +83,8 @@
                                 <!--Form-->
                                 <form action="temuprocess.php" method="post">
                                     <div class="form_wrap">
+
+
 
                                         <div class="input_wrap">
                                         <center><label for="temujanji">TemuJanji</label></center>

@@ -1,21 +1,50 @@
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM pelajar";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
-        <link href="stylea.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <body class="sb-nav-fixed">
+    <title>Paparan Temujanji</title>
+</head>
+<style>
+table {
+  border-collapse: collapse;
+}
+ th {
+  background: lightblue;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+</style>
+<body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Penasihat Akedemik</a>
+            <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -40,77 +69,141 @@
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="PaPage.php">
+                            <a class="nav-link" href="studPage.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                                 Halaman Utama
                             </a>
 
-                            <a class="nav-link collapsed" href="Klist.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 Ketersediaan kaunselor pada list
-                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            
                             </a>
-                            <a class="nav-link" href="temujanjipa.php">
+                            <a class="nav-link" href="temujanji.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Temujanji
                             </a>
-                            <a class="nav-link" href="maklumatPe.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
-                            </a>
-                            <a class="nav-link" href="rekord.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
-                            </a>
                         </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Selamat datang:</div>
+                        Pelanggan
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <table>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Unit Kaunseling PTSS</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Dashboard</li>
+                        </ol>
+                        <div class="row">
+                        <table border="1">
                         <tr>
-                            <th>Bil</th>
                             <th>Nama Pelajar</th>
                             <th>No Matrik</th>
-                            <th>Jabatan</th>
-                            <th>Nama Kaunselor</th>
-                            <th>Laporan</th>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
                         </tr>
 
-                    </table>
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Nama"]; ?></td>                   
+                    <td><?php echo $row["NoPendaftaran"]; ?></td>      
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
+    
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM kelas";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
+
+<table border="1">
+                        <tr>
+                            <th>Jabatan</th>
+                        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Jabatan"]; ?></td>                   
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
+
+    <?php
+include('connection.php');
+
+$sql = "SELECT * FROM kaunselor";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
+
+<table border="1">
+                        <tr>
+                            <th>Nama Kaunselor</th>
+                        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Nama"]; ?></td>                   
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
+                        
+                            
+                    </div>
                 </main>
             </div>
         </div>
