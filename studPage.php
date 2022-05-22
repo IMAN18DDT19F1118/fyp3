@@ -45,7 +45,7 @@
                             </a>
                             <a class="nav-link" href="Klist.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Ketersediaan kaunselor pada list
+                                Senarai tarikh ketidaksediaan kaunselor  
                                 
                             </a>
                             <a class="nav-link" href="temujanji.php">

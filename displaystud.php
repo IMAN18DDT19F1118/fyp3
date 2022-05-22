@@ -102,6 +102,7 @@ tr:hover {
         <tr>
             <th>Tarikh TemuJanji</th>
             <th>Masa</th>
+            <th>Kaunselor</th>
             <th>Action</th>
         </tr>
 
@@ -115,7 +116,8 @@ tr:hover {
                 <tr>
 
                     <td><?php echo $row["tarikh"]; ?></td>                   
-                    <td><?php echo $row["masa"]; ?></td>               
+                    <td><?php echo $row["masa"]; ?></td>
+                    <td><?php echo $row["IC_Kaunselor"]; ?></td>               
                     <td>
                         <a href="updatestud.php?id=<?php echo $row["ID"]; ?>">Update</a>
 

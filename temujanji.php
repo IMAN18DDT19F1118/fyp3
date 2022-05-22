@@ -10,7 +10,7 @@
     <title>Borang TemuJanji</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
-    <link href="temu.css" rel="stylesheet" />
+    <link href="kaunselor.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 
@@ -55,7 +55,7 @@
 
                             <a class="nav-link" href="Klist.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Ketersediaan kaunselor pada list
+                                Senarai tarikh ketidaksediaan kaunselor  
                         </a>
                         <a class="nav-link" href="temujanji.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
@@ -84,18 +84,26 @@
                                 <form action="temuprocess.php" method="post">
                                     <div class="form_wrap">
 
+                                        <div class="input_wrap">
+                                            <label for="kaunselor">kaunselor</label>
 
+                                            <select name="kaunselor" required>
+                                                <option>-Select Lecture-</option>
+                                                <option value="">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
+                                                <option value="">Norzila Binti MHD Noor</option>
+                                                <option value="">Wan Kamariah BT Wan Mat</option>
+                                            </select>
 
                                         <div class="input_wrap">
-                                        <center><label for="temujanji">TemuJanji</label></center>
+                                        <label for="temujanji">TemuJanji</label>
 
-                                            <center><input type="date" id="temujanji" name="date" required></center>
+                                            <input type="date" id="temujanji" name="date" required>
                                         </div>
 
                                         <div class="input_wrap">
-                                        <center><label for=masa>Masa</label></center>
+                                        <label for=masa>Masa</label>
 
-                                        <center><select name="schedule_time" required></center>
+                                        <select name="schedule_time" required>
                                                 <option>-Select Time-</option>
                                                 <option value="08:00">08:00 am</option>
                                                 <option value="08:30">08:30 am</option>
