@@ -9,7 +9,7 @@
         <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
-        <link href="temu.css" rel="stylesheet"/>
+        <link href="kaunselor.css" rel="stylesheet"/>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -69,33 +69,45 @@
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Borang TemuJanji</li>
-                        </ol>
-                        <div class="row">
-                            <div class="wrapper">
-                                <div class="temujanji_form">
-                                    <!--Title-->
-                                    <div class="title">
-                                        <h1>Temu Janji Kaunseling<h1>
-                                    </div>
-                                    <br><br>
-                                    <!--Form-->
+                <div class="container-fluid px-4">
+                    <h1 class ="mt-4">Unit Kaunseling PTSS</h1>
+                    <ol>
+                        <li class ="breadcrumb-item active">Borang TemuJanji</li>
+                    </ol>
+                    <div class="row">
+                        <div class="wrapper">
+                            <div class="registration_form">
+                                <!--Title-->
+                                <div class="title">
+                                    Temu Janji Kaunseling
+                                </div>
+                                <br><br>
+                                <!-- Form -->
+                                <div>
                                     <form action="temuprocess2.php" method="post">
-                                        <div class="form_wrap">
+                                        <div class="from_wrap">
+                                            <label for="kaunselor">Sila Pilih Kaunselor Anda</label>
+                                            <select name="kaunselor" required>
+                                                <option>-Select Lecture-</option>
+                                                <option value="">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
+                                                <option value="">Norzila Binti MHD Noor</option>
+                                                <option value="">Wan Kamariah BT Wan Mat</option>
+                                            </select>
+                                        </div>
 
-                                            <div class="input_wrap">
-                                            <center><label for="temujanji">TemuJanji</label></center>
+                                        <br><br>
 
-                                                <center><input type="date" id="temujanji" name="date" required></center>
-                                            </div>
+                                        <div class="input_wrap">
+                                            <label for="temujanji">TemuJanji</label><br>
+                                            <input type="date" id="temujanji" name="date" required>
+                                        </div>
 
-                                            <div class="input_wrap">
-                                            <center><label for=masa>Masa</label></center>
+                                        <br><br>
 
-                                            <center><select name="schedule_time" required></center>
+                                        <div class="input_wrap">
+                                            <label for=masa>Masa</label><br>
+
+                                            <select name="schedule_time" required>
                                                     <option>-Select Time-</option>
                                                     <option value="08:00">08:00 am</option>
                                                     <option value="08:30">08:30 am</option>
@@ -116,22 +128,21 @@
                                                     <option value="4:00">4:00 pm</option>
                                                     <option value="4:30">4:30 pm</option>
                                                 </select>
-                                            </div>
-
-                                            <!--Submit button-->
-                                            <div class="input_wrap">
-                                                <input type="submit" value="Submit" class="submit_btn" name="submit">
-                                                <br><br>
-                                                <input type="reset" value="Reset" class="reset_btn">
-                                            </div>
                                         </div>
+                                            <br><br>
+                                        <!--Submit button-->
+                                        <div class="input_wrap">
+                                            <input type="submit" value="Submit" class="submit_btn" name="submit">
+                                            <br><br>
+                                            <input type="reset" value="Reset" class="reset_btn">
+                                        </div>
+                                        
                                     </form>
-
-
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
                 </main>
             </div>
         </div>

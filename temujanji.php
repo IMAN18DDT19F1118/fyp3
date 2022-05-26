@@ -67,75 +67,76 @@
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Borang TemuJanji</li>
+            <div class="container-fluid px-4">
+                    <h1 class ="mt-4">Unit Kaunseling PTSS</h1>
+                    <ol>
+                        <li class ="breadcrumb-item active">Borang TemuJanji</li>
                     </ol>
                     <div class="row">
                         <div class="wrapper">
-                            <div class="temujanji_form">
+                            <div class="registration_form">
                                 <!--Title-->
                                 <div class="title">
-                                    <h1>Temu Janji Kaunseling<h1>
+                                    Temu Janji Kaunseling
                                 </div>
                                 <br><br>
-                                <!--Form-->
-                                <form action="temuprocess.php" method="post">
-                                    <div class="form_wrap">
-
-                                        <div class="input_wrap">
-                                            <label for="kaunselor">kaunselor</label>
-
-                                            <select name="kaunselor" required>
+                                <!-- Form -->
+                                <div>
+                                    <form action="temuprocess.php" method="post">
+                                        <div class="from_wrap">
+                                            <label for="kaunselor">Sila Pilih Kaunselor Anda</label>
+                                            <select name="kaunselor" id="kaun" required>
                                                 <option>-Select Lecture-</option>
-                                                <option value="">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
-                                                <option value="">Norzila Binti MHD Noor</option>
-                                                <option value="">Wan Kamariah BT Wan Mat</option>
+                                                <option value="Puan Raja Rabiaatum Adawilah BT Raja Mamat">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
+                                                <option value="Norzila Binti MHD Noor">Norzila Binti MHD Noor</option>
+                                                <option value="Wan Kamariah BT Wan Mat">Wan Kamariah BT Wan Mat</option>
                                             </select>
+                                        </div>
+
+                                        <br><br>
 
                                         <div class="input_wrap">
-                                        <label for="temujanji">TemuJanji</label>
-
+                                            <label for="temujanji">TemuJanji</label><br>
                                             <input type="date" id="temujanji" name="date" required>
                                         </div>
 
+                                        <br><br>
+
                                         <div class="input_wrap">
-                                        <label for=masa>Masa</label>
+                                            <label for=masa>Masa</label><br>
 
-                                        <select name="schedule_time" required>
-                                                <option>-Select Time-</option>
-                                                <option value="08:00">08:00 am</option>
-                                                <option value="08:30">08:30 am</option>
-                                                <option value="09:00">09:00 am</option>
-                                                <option value="09:30">09:30 am</option>
-                                                <option value="10:00">10:00 am</option>
-                                                <option value="10:30">10:30 am</option>
-                                                <option value="11:00">11:00 am</option>
-                                                <option value="11:30">11:30 am</option>
-                                                <option value="12:00">12:00 pm</option>
-                                                <option value="12:30">12:30 pm</option>
-                                                <option value="1:00">1:00 pm</option>
-                                                <option value="1:30">1:30 pm</option>
-                                                <option value="2:00">2:00 pm</option>
-                                                <option value="2:30">2:30 pm</option>
-                                                <option value="3:00">3:00 pm</option>
-                                                <option value="3:30">3:30 pm</option>
-                                                <option value="4:00">4:00 pm</option>
-                                                <option value="4:30">4:30 pm</option>
-                                            </select>
+                                            <select name="schedule_time" required>
+                                                    <option>-Select Time-</option>
+                                                    <option value="08:00">08:00 am</option>
+                                                    <option value="08:30">08:30 am</option>
+                                                    <option value="09:00">09:00 am</option>
+                                                    <option value="09:30">09:30 am</option>
+                                                    <option value="10:00">10:00 am</option>
+                                                    <option value="10:30">10:30 am</option>
+                                                    <option value="11:00">11:00 am</option>
+                                                    <option value="11:30">11:30 am</option>
+                                                    <option value="12:00">12:00 pm</option>
+                                                    <option value="12:30">12:30 pm</option>
+                                                    <option value="1:00">1:00 pm</option>
+                                                    <option value="1:30">1:30 pm</option>
+                                                    <option value="2:00">2:00 pm</option>
+                                                    <option value="2:30">2:30 pm</option>
+                                                    <option value="3:00">3:00 pm</option>
+                                                    <option value="3:30">3:30 pm</option>
+                                                    <option value="4:00">4:00 pm</option>
+                                                    <option value="4:30">4:30 pm</option>
+                                                </select>
                                         </div>
-
+                                            <br><br>
                                         <!--Submit button-->
                                         <div class="input_wrap">
                                             <input type="submit" value="Submit" class="submit_btn" name="submit">
                                             <br><br>
                                             <input type="reset" value="Reset" class="reset_btn">
                                         </div>
-                                    </div>
-                                </form>
-
-
+                                        
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -151,6 +152,12 @@
     <script src="assets/demo/chart-bar-demo.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
+
+    <script>
+    function myFunction() {
+    document.getElementById("kaun").submit();
+    }
+    </script>
 </body>
 
 </html>
