@@ -87,29 +87,30 @@ tr:hover {
                             </a>
                             <a class="nav-link" href="maklumatPe.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
+                                Maklumat Pelajar
                             </a>
                             <a class="nav-link" href="rekord.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
+                                Laporan kaunseling pelajar
                             </a>
                         </div>
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-                <main>
+            <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Paparan TemuJanji Anda</li>
                         </ol>
                         <div class="row">
                         <table border="1">
         <tr>
             <th>Tarikh TemuJanji</th>
             <th>Masa</th>
-            <th>Action</th>
+            <th>Kaunselor</th>
+            <th>Perbuatan</th>
         </tr>
 
         <?php
@@ -120,13 +121,14 @@ tr:hover {
                 ?>
 
                 <tr>
-    
-                    <td><?php echo $row["tarikh"]; ?></td>                   
-                    <td><?php echo $row["masa"]; ?></td>               
-                    <td>
-                        <a href="updatepa.php?id=<?php echo $row["ID"]; ?>">Update</a>
 
-                        <a href="deletetemu2.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
+                    <td><?php echo $row["tarikh"]; ?></td>                   
+                    <td><?php echo $row["masa"]; ?></td>
+                    <td><?php echo $row["NamaKaunselor"]; ?></td>               
+                    <td>
+                        <a href="updatestud.php?id=<?php echo $row["ID"]; ?>">Kemas Kini</a>
+
+                        <a href="deletetemu.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Padam</a>
                     </td>
                 </tr>
             <?php
@@ -138,7 +140,6 @@ tr:hover {
         mysqli_close($conn);
         ?>
     </table>
-                        </div>
                         
                             
                     </div>

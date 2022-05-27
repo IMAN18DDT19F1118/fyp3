@@ -158,4 +158,15 @@
 .submit_btn:hover{
   background: #051c94;
 }
-.view{}
+.view{
+  font-size:17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  background: #0d6ad7;
+  padding: 10px;
+  border: 0;
+  color:white;
+}

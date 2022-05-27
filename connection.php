@@ -18,6 +18,6 @@ if(!$conn)
 
 }
 else{
-    echo"Connection is succesfully created";
+    
 }
 ?>

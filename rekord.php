@@ -1,3 +1,12 @@
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM pelajar";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,6 +20,29 @@
         <link href="styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
+    <style>
+table {
+  border-collapse: collapse;
+}
+ th {
+  background: lightblue;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background: #efefef;
+}
+
+tr:hover {
+  background: #d1d1d1;
+}
+
+</style>
+
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
@@ -55,11 +87,11 @@
                             </a>
                             <a class="nav-link" href="maklumatPe.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
+                                Maklumat Pelajar
                             </a>
                             <a class="nav-link" href="rekord.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
+                                Laporan kaunseling pelajar
                             </a>
                         </div>
                     </div>
@@ -70,17 +102,133 @@
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Laporan kaunseling pelajar</li>
                         </ol>
+                        <div class="container-fluid px-4">
+                
+
                         <div class="row">
-                            <h1>Selamat Datang</h1>
-                        </div>
+                        <table border="1">
+                        <tr>
+                            <th>Nama Pelajar</th>
+                            <th>No Matrik</th>
+                            <th>Laporan</th>
+                            <th>Maklumat Laporan</th>
+                        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Nama"]; ?></td>                   
+                    <td><?php echo $row["NoPendaftaran"]; ?></td>
+                    <td><button onclick="prom()">laporan</button></td>
+                    <td><p></p></td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM kelas";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
+
+<table border="1">
+                        <tr>
+                            <th>Jabatan</th>
+                        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Jabatan"]; ?></td>                   
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+</table>
+<?php
+include('connection.php');
+
+$sql = "SELECT * FROM kaunselor";
+//$result = mysqli_query($conn,$sql);
+
+//opyion2
+$result=$conn->query($sql);
+?>
+
+<table border="1">
+                        <tr>
+                            <th>Nama Kaunselor</th>
+                        </tr>
+
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                ?>
+
+                <tr>
+
+                    <td><?php echo $row["Nama"]; ?></td>                   
+                    </td>
+                </tr>
+            <?php
+            }
+        }
+         else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+</table>
+
+
+
                         
                             
                     </div>
                 </main>
             </div>
         </div>
+<script>
+    function prom() {
+    var person = prompt("Sila Isi Laporan Session Kaunseling");
+    if (person != null) {
+        document.getElementById("ID").innerHTML =
+            person;
+    }
+}
+</script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
@@ -90,3 +238,4 @@
         <script src="js/datatables-simple-demo.js"></script>
     </body>
 </html>
+

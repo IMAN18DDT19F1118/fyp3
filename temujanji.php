@@ -84,8 +84,8 @@
                                 <div>
                                     <form action="temuprocess.php" method="post">
                                         <div class="from_wrap">
-                                            <label for="kaunselor">Sila Pilih Kaunselor Anda</label>
-                                            <select name="kaunselor" id="kaun" required>
+                                            <label for="kan">Sila Pilih Kaunselor Anda</label>
+                                            <select name="kaunselor" id="kaunselor" required>
                                                 <option>-Select Lecture-</option>
                                                 <option value="Puan Raja Rabiaatum Adawilah BT Raja Mamat">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
                                                 <option value="Norzila Binti MHD Noor">Norzila Binti MHD Noor</option>
@@ -129,10 +129,10 @@
                                         </div>
                                             <br><br>
                                         <!--Submit button-->
-                                        <div class="input_wrap">
-                                            <input type="submit" value="Submit" class="submit_btn" name="submit">
+                                        <div class="view">
+                                            <input type="submit" value="Hantar" class="submit_btn" name="submit">
                                             <br><br>
-                                            <input type="reset" value="Reset" class="reset_btn">
+                                            <input type="reset" value="set semula" class="reset_btn">
                                         </div>
                                         
                                     </form>
@@ -153,11 +153,6 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
     <script src="js/datatables-simple-demo.js"></script>
 
-    <script>
-    function myFunction() {
-    document.getElementById("kaun").submit();
-    }
-    </script>
 </body>
 
 </html>

@@ -64,11 +64,11 @@ $row=$resultusr->fetch_assoc();
                             </a>
                             <a class="nav-link" href="maklumatPe.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
+                                Maklumat Pelajar
                             </a>
                             <a class="nav-link" href="rekord.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
+                                Laporan kaunseling pelajar
                             </a>
                         </div>
                     </div>

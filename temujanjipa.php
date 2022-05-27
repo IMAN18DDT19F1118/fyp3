@@ -56,11 +56,11 @@
                             </a>
                             <a class="nav-link" href="maklumatPe.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                maklumat pelajar
+                                Maklumat Pelajar
                             </a>
                             <a class="nav-link" href="rekord.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                rekord pelajar
+                                Laporan kaunseling pelajar
                             </a>
                         </div>
                     </div>
@@ -89,9 +89,9 @@
                                             <label for="kaunselor">Sila Pilih Kaunselor Anda</label>
                                             <select name="kaunselor" required>
                                                 <option>-Select Lecture-</option>
-                                                <option value="">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
-                                                <option value="">Norzila Binti MHD Noor</option>
-                                                <option value="">Wan Kamariah BT Wan Mat</option>
+                                                <option value="Puan Raja Rabiaatum Adawilah BT Raja Mamat">Puan Raja Rabiaatum Adawilah BT Raja Mamat</option>
+                                                <option value="Norzila Binti MHD Noor">Norzila Binti MHD Noor</option>
+                                                <option value="Wan Kamariah BT Wan Mat">Wan Kamariah BT Wan Mat</option>
                                             </select>
                                         </div>
 
