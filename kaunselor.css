@@ -158,7 +158,18 @@
 .submit_btn:hover{
   background: #051c94;
 }
-.view{
+.view .submit_btn{
+  font-size:17px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  width: 100%;
+  background: #d70d0d;
+  padding: 10px;
+  border: 0;
+  color:white;
+  margin-bottom: 15px;
   font-size:17px;
   border-radius: 3px;
   text-transform: uppercase;
@@ -169,4 +180,8 @@
   padding: 10px;
   border: 0;
   color:white;
+}
+
+.submit_btn:hover{
+  background: #051c94;
 }
