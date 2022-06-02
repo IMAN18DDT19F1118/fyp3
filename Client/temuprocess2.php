@@ -12,7 +12,7 @@ $time=$_POST['schedule_time'];
 
 $sql="INSERT INTO temu_janji(IC_Pa, IC_Kaunselor, tarikh,masa) VALUE ('$ic', '$kaun', '$date','$time')";
 if($conn->query($sql)===TRUE){
-    header("location: displaystud.php");
+    header("location: displaypa.php");
 }
 else{
 }

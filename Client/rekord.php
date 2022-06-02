@@ -91,6 +91,10 @@ tr:hover {
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
                                 Laporan kaunseling pelajar
                             </a>
+                            <a class="nav-link" href="displaypa.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
+                        </a>
                         </div>
                     </div>
                 </nav>
@@ -110,6 +114,8 @@ tr:hover {
                         <tr>
                             <th>Nama Pelajar</th>
                             <th>No Matrik</th>
+                            <th>Jabatan</th>
+                            <th>Nama Kaunselor</th>
                             <th>Laporan</th>
                             <th>Maklumat Laporan</th>
                         </tr>
@@ -125,8 +131,8 @@ tr:hover {
 
                     <td><?php echo $row["Nama"]; ?></td>                   
                     <td><?php echo $row["NoPendaftaran"]; ?></td>
-                    <td><button onclick="prom()">laporan</button></td>
-                    <td><p></p></td>
+                    <td></td>
+                    <td></td>
                 </tr>
             <?php
             }

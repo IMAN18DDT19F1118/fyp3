@@ -91,6 +91,10 @@ tr:hover {
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
                                 Laporan kaunseling pelajar
                             </a>
+                            <a class="nav-link" href="displaypa.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
+                        </a>
                         </div>
                     </div>
                 </nav>
