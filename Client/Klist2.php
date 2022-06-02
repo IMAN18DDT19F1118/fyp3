@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM pelajar";
+$sql = "SELECT * FROM kaunseloraction";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
@@ -9,18 +9,18 @@ $result=$conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head> 
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Penasihat Akedemik</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    </head>
-    <style>
+    <title>Paparan Temujanji</title>
+</head>
+<style>
 table {
   border-collapse: collapse;
 }
@@ -40,12 +40,11 @@ tr:nth-child(even) {
 tr:hover {
   background: #d1d1d1;
 }
-
 </style>
-    <body class="sb-nav-fixed">
+<body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Penasihat Akedemik</a>
+            <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -70,104 +69,76 @@ tr:hover {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="PaPage.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
-                                Halaman Utama
-                            </a>
+                            <a class="nav-link" href="StaffPage.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                            Halaman Utama
+                        </a>
 
-                            <a class="nav-link" href="Klist3.php">
+                        <a class="nav-link" href="Klist2.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Senarai tarikh ketidaksediaan kaunselor
-                            </a>
-                            <a class="nav-link" href="temujanjipa.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Temujanji
-                            </a>
-                            <a class="nav-link" href="maklumatPe.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                Maklumat Pelajar
-                            </a>
-                            <a class="nav-link" href="rekord.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                                Laporan kaunseling pelajar
-                            </a>
+                        </a>
+                        <a class="nav-link" href="temujanjistaff.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Temujanji
+                        </a>
+
+                        <a class="nav-link" href="displaystaff.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
+                        </a>
                         </div>
+                    </div>
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Selamat datang:</div>
+                        Pelanggan
                     </div>
                 </nav>
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
+                <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Maklumat Pelajar</li>
+                            <li class="breadcrumb-item active"> Senarai tarikh ketidaksediaan kaunselor</li>
                         </ol>
                         <div class="row">
+
                         <table border="1">
-                        <tr>
-                            <th>Nama Pelajar</th>
-                           
-                        </tr>
+        <tr>
+            
+            <th>Nama Kaunselor</th>
+            <th>Perkara</th>
+            <th>Tarikh</th>
+            <th>Masa</th>
+            <th>Tempoh</th>
+        </tr>
 
         <?php
         if(mysqli_num_rows($result)>0)
         {
             while($row = mysqli_fetch_assoc($result)){
-                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
+                
                 ?>
 
                 <tr>
-
-                    <td><?php echo $row["Nama"]; ?></td>                   
-    
+                   
+                    <td><?php echo $row["Nama_kauns"]; ?></td>
+                    <td><?php echo $row["pekara"]; ?></td>                    
+                    <td><?php echo $row["tarikh"]; ?></td>                    
+                    <td><?php echo $row["masa"]; ?></td>                    
+                    <td><?php echo $row["tempoh"]; ?></td>
                 </tr>
             <?php
             }
         }
-         else{
+        else{
             echo "0 results";
         }
         mysqli_close($conn);
         ?>
     </table>
-    <?php
-include('connection.php');
-
-$sql = "SELECT * FROM kelas";
-//$result = mysqli_query($conn,$sql);
-
-//opyion2
-$result=$conn->query($sql);
-?>
-
-<table border="1">
-                        <tr>
-                            <th>Jabatan</th>
-                        </tr>
-
-        <?php
-        if(mysqli_num_rows($result)>0)
-        {
-            while($row = mysqli_fetch_assoc($result)){
-                //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
-                ?>
-
-                <tr>
-
-                    <td><?php echo $row["Jabatan"]; ?></td>                   
-                    </td>
-                </tr>
-            <?php
-            }
-        }
-         else{
-            echo "0 results";
-        }
-        mysqli_close($conn);
-        ?>
-</table>
-                            
-                    </div>
+                        </div>
                 </main>
             </div>
         </div>

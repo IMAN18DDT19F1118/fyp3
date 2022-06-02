@@ -65,5 +65,43 @@
               <?php
  
           }
+
+          $sql = "select * from pa where Ic_Pa = '$ic' and katalaluan = '$password'";  
+          $result = mysqli_query($conn, $sql);  
+          $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+          $count = mysqli_num_rows($result);  
+            
+          if($count == 1){  
+              echo "login successful";
+               $_SESSION['ic'] = $row["ID"];
+               header('location:Client/PaPage.php');
+           }else{
+               ?>
+               <script>
+                   alert("IC / Katalaluan tidak tepat");
+                   window.location="index.php";
+               </script>
+               <?php
+  
+           }
+
+           $sql = "select * from staff where IC_Staff = '$ic' and katalaluan = '$password'";  
+           $result = mysqli_query($conn, $sql);  
+           $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+           $count = mysqli_num_rows($result);  
+             
+           if($count == 1){  
+               echo "login successful";
+                $_SESSION['ic'] = $row["ID"];
+                header('location:Client/StaffPage.php');
+            }else{
+                ?>
+                <script>
+                    alert("IC / Katalaluan tidak tepat");
+                    window.location="index.php";
+                </script>
+                <?php
+   
+            }
         
 ?>  

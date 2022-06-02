@@ -1,13 +1,11 @@
 <?php
 include('connection.php');
-session_start();
-$paid = $_SESSION['ic'];
 
-$sql = "SELECT * FROM temu_janji WHERE IC_Pa = '$paid'";
+$sql = "SELECT * FROM kaunseloraction";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
-$result = $conn->query($sql);
+$result=$conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,34 +16,32 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
+    <title>Penasihat Akedemik</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="styles.css" rel="stylesheet" />
-
+    <link href="stylea.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <title>Paparan Temujanji</title>
 </head>
 <style>
-    table {
-        border-collapse: collapse;
-    }
+table {
+  border-collapse: collapse;
+}
+ th {
+  background: lightblue;
+}
 
-    th {
-        background: lightblue;
-    }
+th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
 
-    th,
-    td {
-        border: 1px solid #ccc;
-        padding: 8px;
-    }
+tr:nth-child(even) {
+  background: #efefef;
+}
 
-    tr:nth-child(even) {
-        background: #efefef;
-    }
-
-    tr:hover {
-        background: #d1d1d1;
-    }
+tr:hover {
+  background: #d1d1d1;
+}
 </style>
 
 <body class="sb-nav-fixed">
@@ -87,7 +83,6 @@ $result = $conn->query($sql);
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Senarai tarikh ketidaksediaan kaunselor
                         </a>
-                        
                         <a class="nav-link" href="temujanjipa.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji
@@ -106,63 +101,48 @@ $result = $conn->query($sql);
         </div>
         <div id="layoutSidenav_content">
             <main>
-                <div class="container-fluid px-4">
-                    <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Paparan TemuJanji Anda</li>
-                    </ol>
-                    <div class="row">
+            <div class="container-fluid px-4">
+                        <h1 class="mt-4">Unit Kaunseling PTSS</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active"> Senarai tarikh ketidaksediaan kaunselor</li>
+                        </ol>
+                        <div class="row">
+
                         <table border="1">
-                            <tr>
-                                <th>Tarikh TemuJanji</th>
-                                <th>Masa</th>
-                                <th>Kaunselor</th>
-                                <th>Perbuatan</th>
-                            </tr>
+        <tr>
+            
+            <th>Nama Kaunselor</th>
+            <th>Perkara</th>
+            <th>Tarikh</th>
+            <th>Masa</th>
+            <th>Tempoh</th>
+        </tr>
 
-                            <?php
-                            if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row["ID"];
-                                    //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
-                            ?>
+        <?php
+        if(mysqli_num_rows($result)>0)
+        {
+            while($row = mysqli_fetch_assoc($result)){
+                
+                ?>
 
-                                    <tr>
-
-                                        <td><?php echo $row["tarikh"]; ?></td>
-                                        <td><?php echo $row["masa"]; ?></td>
-
-                                        <?php
-                                        $id_kaunselor = $row["IC_Kaunselor"];
-                                        $sql = "SELECT * FROM kaunselor WHERE ID = '" . $id_kaunselor . "'";
-                                        $result3 = $conn->query($sql);
-                                        if (mysqli_num_rows($result3) > 0) {
-                                            while ($row = mysqli_fetch_assoc($result3)) {
-                                                $kaunselor_name = $row["Nama"];
-                                            }
-                                        }
-
-                                        ?>
-
-
-                                        <td><?php echo $kaunselor_name; ?></td>
-                                        <td>
-                                            <a href="updatepa.php?id=<?php echo $id; ?>">Kemas Kini</a>
-
-                                            <a href="deletetemu2.php?id=<?php echo $id; ?>">Padam</a>
-                                        </td>
-                                    </tr>
-                            <?php
-                                }
-                            } else {
-                                echo "0 results";
-                            }
-                            mysqli_close($conn);
-                            ?>
-                        </table>
-
-
-                    </div>
+                <tr>
+                   
+                    <td><?php echo $row["Nama_kauns"]; ?></td>
+                    <td><?php echo $row["pekara"]; ?></td>                    
+                    <td><?php echo $row["tarikh"]; ?></td>                    
+                    <td><?php echo $row["masa"]; ?></td>                    
+                    <td><?php echo $row["tempoh"]; ?></td>
+                </tr>
+            <?php
+            }
+        }
+        else{
+            echo "0 results";
+        }
+        mysqli_close($conn);
+        ?>
+    </table>
+                        </div>
             </main>
         </div>
     </div>

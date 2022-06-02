@@ -1,47 +1,27 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM kaunseloraction";
-//$result = mysqli_query($conn,$sql);
+$idusr=$_GET["id"];
+$dis_usr="SELECT * FROM temu_janji WHERE id='$idusr'";
+$resultusr=$conn->query($dis_usr);
 
-//opyion2
-$result=$conn->query($sql);
+$row=$resultusr->fetch_assoc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head> 
+    <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+        <title>Page Pelajar</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="styles.css" rel="stylesheet" />
+        <link href="kaunselor.css" rel="stylesheet"/>
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <title>Paparan Temujanji</title>
-</head>
-<style>
-table {
-  border-collapse: collapse;
-}
- th {
-  background: lightblue;
-}
-
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background: #efefef;
-}
-
-tr:hover {
-  background: #d1d1d1;
-}
-</style>
-<body class="sb-nav-fixed">
+    </head>
+    <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
@@ -69,22 +49,21 @@ tr:hover {
                     <div class="sb-sidenav-menu">
                         <div class="nav">
                             <div class="sb-sidenav-menu-heading">Core</div>
-                            <a class="nav-link" href="studPage.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
-                                Halaman Utama
-                            </a>
+                            <a class="nav-link" href="StaffPage.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
+                            Halaman Utama
+                        </a>
 
-                            <a class="nav-link collapsed" href="Klist.php" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Senarai tarikh ketidaksediaan kaunselor  
-                            
-                            </a>
-                            <a class="nav-link" href="temujanji.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                Temujanji
-                            </a>
+                        <a class="nav-link" href="Klist2.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            Senarai tarikh ketidaksediaan kaunselor
+                        </a>
+                        <a class="nav-link" href="temujanjistaff.php">
+                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            Temujanji
+                        </a>
 
-                            <a class="nav-link" href="displaystud.php">
+                        <a class="nav-link" href="displaystaff.php">
                             <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
                             Senarai Temujanji
                         </a>
@@ -98,48 +77,58 @@ tr:hover {
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                <div class="container-fluid px-4">
+                    <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active"> Senarai tarikh ketidaksediaan kaunselor</li>
+                            <li class="breadcrumb-item active">Dashboard</li>
                         </ol>
                         <div class="row">
+                        <center><ins><b>mengubah masa dan tarikh</b><ins></center>
 
-                        <table border="1">
-        <tr>
-            
-            <th>Nama Kaunselor</th>
-            <th>Perkara</th>
-            <th>Tarikh</th>
-            <th>Masa</th>
-            <th>Tempoh</th>
-        </tr>
+<form name="temujanji" action="updateprocess3.php" method="post">
+    <center>
+        <br>
+        <b>Tarikh : </b>
+        <input type="date" name="date" value="<?php echo $row["tarikh"];?>" required>
+        <br><br>
 
-        <?php
-        if(mysqli_num_rows($result)>0)
-        {
-            while($row = mysqli_fetch_assoc($result)){
-                
-                ?>
+        <b>Masa : </b>
+        <select name="schedule_time" <?php echo $row["masa"];?> required>
+                                        <option>-Select Time-</option>
+                                        <option value="08:00">08:00 am</option>
+                                        <option value="08:30">08:30 am</option>
+                                        <option value="09:00">09:00 am</option>
+                                        <option value="09:30">09:30 am</option>
+                                        <option value="10:00">10:00 am</option>
+                                        <option value="10:30">10:30 am</option>
+                                        <option value="11:00">11:00 am</option>
+                                        <option value="11:30">11:30 am</option>
+                                        <option value="12:00">12:00 pm</option>
+                                        <option value="12:30">12:30 pm</option>
+                                        <option value="1:00">1:00 pm</option>
+                                        <option value="1:30">1:30 pm</option>
+                                        <option value="2:00">2:00 pm</option>
+                                        <option value="2:30">2:30 pm</option>
+                                        <option value="3:00">3:00 pm</option>
+                                        <option value="3:30">3:30 pm</option>
+                                        <option value="4:00">4:00 pm</option>
+                                        <option value="4:30">4:30 pm</option>
+                                    </select>
+        <br><br>
+    </center>
 
-                <tr>
-                   
-                    <td><?php echo $row["Nama_kauns"]; ?></td>
-                    <td><?php echo $row["pekara"]; ?></td>                    
-                    <td><?php echo $row["tarikh"]; ?></td>                    
-                    <td><?php echo $row["masa"]; ?></td>                    
-                    <td><?php echo $row["tempoh"]; ?></td>
-                </tr>
-            <?php
-            }
-        }
-        else{
-            echo "0 results";
-        }
-        mysqli_close($conn);
-        ?>
-    </table>
+    <br>
+
+    <center>
+        <input type="submit" name="Submit" value="Update">
+        <input type="reset" value="Reset">
+        <input type="hidden" name="id" value="<?php echo $row["ID"];?>">
+    </center>
+</form>
                         </div>
+                        
+                            
+                    </div>
                 </main>
             </div>
         </div>

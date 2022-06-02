@@ -1,29 +1,14 @@
 <?php
 include('connection.php');
 session_start();
-$paid = $_SESSION['ic'];
+$stdid = $_SESSION['ic'];
 
-$sql = "SELECT * FROM temu_janji WHERE IC_Pa = '$paid'";
+$sql = "SELECT * FROM temu_janji WHERE IC_staff = '$stdid'";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
 $result = $conn->query($sql);
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" />
-
-    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-    <title>Paparan Temujanji</title>
-</head>
 <style>
     table {
         border-collapse: collapse;
@@ -47,15 +32,32 @@ $result = $conn->query($sql);
         background: #d1d1d1;
     }
 </style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Borang TemuJanji</title>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="kaunselor.css" rel="stylesheet" />
+    <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
 
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
-        <a class="navbar-brand ps-3" href="index.html">Penasihat Akedemik</a>
+        <a class="navbar-brand ps-3" href="index.html">Pelanggan</a>
         <!-- Sidebar Toggle-->
         <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
         <!-- Navbar Search-->
         <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+            </div>
         </form>
         <!-- Navbar-->
         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
@@ -78,27 +80,23 @@ $result = $conn->query($sql);
                 <div class="sb-sidenav-menu">
                     <div class="nav">
                         <div class="sb-sidenav-menu-heading">Core</div>
-                        <a class="nav-link" href="PaPage.php">
+                        <a class="nav-link" href="StaffPage.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-home"></i></div>
                             Halaman Utama
                         </a>
 
-                        <a class="nav-link" href="Klist3.php">
+                        <a class="nav-link" href="Klist2.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Senarai tarikh ketidaksediaan kaunselor
                         </a>
-                        
-                        <a class="nav-link" href="temujanjipa.php">
+                        <a class="nav-link" href="temujanjistaff.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji
                         </a>
-                        <a class="nav-link" href="maklumatPe.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                            Maklumat Pelajar
-                        </a>
-                        <a class="nav-link" href="rekord.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
-                            Laporan kaunseling pelajar
+
+                        <a class="nav-link" href="displaystaff.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
                         </a>
                     </div>
                 </div>
@@ -147,9 +145,9 @@ $result = $conn->query($sql);
 
                                         <td><?php echo $kaunselor_name; ?></td>
                                         <td>
-                                            <a href="updatepa.php?id=<?php echo $id; ?>">Kemas Kini</a>
+                                            <a href="updatestaff.php?id=<?php echo $id; ?>">Kemas Kini</a>
 
-                                            <a href="deletetemu2.php?id=<?php echo $id; ?>">Padam</a>
+                                            <a href="deletetemu3.php?id=<?php echo $id; ?>">Padam</a>
                                         </td>
                                     </tr>
                             <?php
