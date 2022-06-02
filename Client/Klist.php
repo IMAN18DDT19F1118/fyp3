@@ -83,6 +83,11 @@ tr:hover {
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Temujanji
                             </a>
+
+                            <a class="nav-link" href="displaystud.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
+                        </a>
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">

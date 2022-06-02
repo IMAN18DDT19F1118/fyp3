@@ -61,6 +61,11 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji
                         </a>
+
+                        <a class="nav-link" href="displaystud.php">
+                            <div class="sb-nav-link-icon"><i class="fa fa-book"></i></div>
+                            Senarai Temujanji
+                        </a>
                     </div>
                 </div>
             </nav>
@@ -82,86 +87,7 @@
                             </div>
                            
                         </div>   
-                        <script>
-                            var bannerStatus = 1;
-                            var bannerTimer = 10;
-
-                            window.onload = function(){
-                                bannerLoop();
-                            }
-
-                            var startBannerLoop = setInterval(function(){
-                                bannerLoop();
-                            }, bannerTimer);
-
-                            document.getElementById("main-banner").onmouseenter = function(){
-                                clearInterval(startBannerLoop);
-                            }
-
-                            document.getElementById("main-banner").onmouseleave = function(){
-                                startBannerLoop = setInterval(function(){
-                                bannerLoop();
-                            }, bannerTimer);
-                            }
-
-
-
-                            function bannerLoop(){
-                                if(bannerStatus === 1){
-                                    document.getElementById("imgban2").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban1").style.right = "0px";
-                                    document.getElementById("imgban1").style.zIndex = "1000";
-                                    document.getElementById("imgban2").style.right = "-1200px";
-                                    document.getElementById("imgban2").style.zIndex = "1500";
-                                    document.getElementById("imgban3").style.right = "120px";
-                                    document.getElementById("imgban3").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban2").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 2;
-                                }
-                                
-                            else if(bannerStatus === 2){
-                                    document.getElementById("imgban3").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban2").style.right = "0px";
-                                    document.getElementById("imgban2").style.zIndex = "1000";
-                                    document.getElementById("imgban3").style.right = "-1200px";
-                                    document.getElementById("imgban3").style.zIndex = "1500";
-                                    document.getElementById("imgban1").style.right = "120px";
-                                    document.getElementById("imgban1").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban3").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 3;
-                                }
-                                else if(bannerStatus === 3){
-                                    document.getElementById("imgban1").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban3").style.right = "0px";
-                                    document.getElementById("imgban3").style.zIndex = "1000";
-                                    document.getElementById("imgban1").style.right = "-1200px";
-                                    document.getElementById("imgban1").style.zIndex = "1500";
-                                    document.getElementById("imgban2").style.right = "120px";
-                                    document.getElementById("imgban2").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban1").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 1;
-                                }
-                                
-                            }
-                        </script>
+                       
                         <div class="row">
                             <h1>Selamat Datang</h1>
                             <br><br>
@@ -172,10 +98,8 @@
                              Politeknik (kakitangan dan pelajar) yang sejahtera emosi, pemikiran, fizikal, spiritual dan sosial 
                              agar dapat berfungsi dengan baik dan dapat menyumbang ke arah kecemerlangan Politeknik.</p>
                         </div>
-                        <center><h5>Carta Organisasi</h5></center>
-                        <div>
-                        <center><img src="img/carta.jpg" width="700" height="600"></center>
-                        </div>
+            
+                    
                 </main>
             </div>
         </div>

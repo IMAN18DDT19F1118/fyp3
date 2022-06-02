@@ -1,5 +1,8 @@
 <?php
 include('connection.php');
+session_start();
+
+$ic = $_SESSION["ic"];
 
 //You can use $_POST['']-->hide user value OR $_GET[''] show user value(url)
 $kaun=$_POST['kaunselor'];
@@ -7,18 +10,10 @@ $date=$_POST['date'];
 $time=$_POST['schedule_time'];
 
 
-$sql="INSERT INTO temu_janji(tarikh,masa,NamaKaunselor) VALUE ('$date','$time','$kaun')";
+$sql="INSERT INTO temu_janji(IC_Pa, IC_Kaunselor, tarikh,masa) VALUE ('$ic', '$kaun', '$date','$time')";
 if($conn->query($sql)===TRUE){
-    echo"New Record created successfully";
+    header("location: displaystud.php");
 }
 else{
-    echo"Error".sql."<br>".$conn->error;
 }
 $conn->close();
-?>
-<script>
-//direct user to page display.php
-    window.location="displaypa.php"
-</script>
-    <?php
-?>
