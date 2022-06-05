@@ -62,10 +62,7 @@ include("connection.php");
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji
                         </a>
-                        <a class="nav-link" href="maklumatPe.php">
-                            <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                            Maklumat Pelajar
-                        </a>
+
                         <a class="nav-link" href="rekord.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
                             Laporan kaunseling pelajar
@@ -98,9 +95,33 @@ include("connection.php");
                                 <div>
                                     <form action="temuprocess2.php" method="post">
                                     <div class="from_wrap">
+                                            <label for="kan">Sila Pilih Pelajar Anda</label>
+                                            <select name="pelajar" id="pelajar" required>
+                                                <option disabled>-Pilih Pelajar anda-</option>
+
+                                                <?php
+                                                $sql = "SELECT * FROM pelajar";
+                                                $result = $conn->query($sql);
+
+                                                if ($result->num_rows > 0) {
+                                                    // output data of each row
+                                                    while ($row = $result->fetch_assoc()) {
+                                                ?>
+                                                        <option value="<?php echo $row["ID"] ?>"><?php echo $row["Nama"] ?></option>
+
+                                                <?php
+                                                    }
+                                                }
+
+                                                ?>
+
+                                            </select>
+                                        </div>
+                                        <br>
+                                    <div class="from_wrap">
                                             <label for="kan">Sila Pilih Kaunselor Anda</label>
                                             <select name="kaunselor" id="kaunselor" required>
-                                                <option disabled>-Select Lecture-</option>
+                                                <option disabled>-Pilih Kaunselor-</option>
 
                                                 <?php
                                                 $sql = "SELECT * FROM kaunselor";

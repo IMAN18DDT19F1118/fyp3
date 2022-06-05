@@ -12,7 +12,7 @@ if($conn->query($sql)===TRUE){
     echo"New Record created successfully";
 }
 else{
-    echo"Error".sql."<br>".$conn->error;
+    echo"Error".$sql."<br>".$conn->error;
 }
 $conn->close();
 ?>

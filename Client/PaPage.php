@@ -53,10 +53,6 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Temujanji
                             </a>
-                            <a class="nav-link" href="maklumatPe.php">
-                                <div class="sb-nav-link-icon"><i class="fas fa-child"></i></div>
-                                Maklumat Pelajar
-                            </a>
                             <a class="nav-link" href="rekord.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
                                 Laporan kaunseling pelajar
