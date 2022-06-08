@@ -69,29 +69,28 @@
                 <main>
                 <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Pengurusan Kaunseling Politeknik Tuanku Syed Sirajuddin</h1>
-                        <div class="main-banner" id="main-banner">
-                            
-                            <div class="imgban" id="imgban1">
-
-                            </div>
-                            <div class="imgban" id="imgban2">
-                                
-                            </div>
-                            <div class="imgban" id="imgban3">
-                                
-                            </div>
-                           
-                        </div>   
+                
     
                         <div class="row">
                             <h1>Selamat Datang</h1>
-                            <br><br>
-                            <h1>Pengenalan</h1>
-                            <br><br>
-                            <p>Unit Pengurusan Psikologi (UPPsi) merupakan unit sokongan di bawah Timbalan Pengarah Sokongan Akademik,
-                             Politeknik Tuanku Syed Sirajuddin (PTSS). UPPsi berperanan membantu ke arah perkembangan warga 
-                             Politeknik (kakitangan dan pelajar) yang sejahtera emosi, pemikiran, fizikal, spiritual dan sosial 
-                             agar dapat berfungsi dengan baik dan dapat menyumbang ke arah kecemerlangan Politeknik.</p>
+                            <br><br><br>
+                            <h1>Senarai nama kaunelor PTSS</h1>
+                            <br><br><br>
+                            <p><h4>KETUA UNIT PENGURUSAN PSIKOLOGI </h4></p>
+                            <p><h5>WAN KAMARIAH BT WAN MAT</h5></p>
+                            <p>(PEGAWAI PSIKOLOGI S44)</p>
+                            <p>04-9886208</p>
+                            <p>kamariah@ptss.edu.my</p>
+                            <br><br><br>
+                            <p><h5>NORZILA BINTI MHD NOOR </h5></p>
+                            <P>(PEGAWAI PSIKOLOGI S44)</P>
+                            <p>04-9886205</p>
+                            < p>norzila@ptss.edu.my</p>
+                            <br><br><br>
+                            <p><h5>RAJA RABIAATUM ADAIAH BT RAJA MAMAT </h5></p>
+                            <P>(PEGAWAI PSIKOLOGI S44)</P>
+                            <p>04-9881100</p>
+                            <p>rabiaatum@ptss.edu.my</p>                             
                         </div>
                         
                 </main>
