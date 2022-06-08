@@ -38,7 +38,7 @@ $row=$resultusr->fetch_assoc();
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="Index.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -80,7 +80,7 @@ $row=$resultusr->fetch_assoc();
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
+                            <li class="breadcrumb-item active">Kemaskini</li>
                         </ol>
                         <div class="row">
                         <center><ins><b>mengubah masa dan tarikh</b><ins></center>

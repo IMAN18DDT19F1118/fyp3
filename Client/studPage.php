@@ -37,7 +37,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="Index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -74,19 +74,7 @@
                 <main>
                 <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Pengurusan Kaunseling Politeknik Tuanku Syed Sirajuddin</h1>
-                        <div class="main-banner" id="main-banner">
-                            
-                            <div class="imgban" id="imgban1">
-
-                            </div>
-                            <div class="imgban" id="imgban2">
-                                
-                            </div>
-                            <div class="imgban" id="imgban3">
-                                
-                            </div>
-                           
-                        </div>   
+                    
                        
                         <div class="row">
                             <h1>Selamat Datang</h1>

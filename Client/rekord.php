@@ -66,7 +66,7 @@ $result = $conn->query($sql);
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="Index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -124,6 +124,8 @@ $result = $conn->query($sql);
                                 if (mysqli_num_rows($result) > 0) {
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $id = $row["ID"];
+                                        $id_kaunselor = $row["IC_Kaunselor"];
+
                                         //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
                                 ?>
 
@@ -138,6 +140,8 @@ $result = $conn->query($sql);
                                                 while ($row = mysqli_fetch_assoc($result3)) {
                                                     $stud_name = $row["Nama"];
                                                     $stud_matrik = $row["NoPendaftaran"];
+
+
                                                 }
                                             }
 
@@ -149,12 +153,11 @@ $result = $conn->query($sql);
 
                             
                                             <?php
-                                            $id_kaunselor = $row["IC_Kaunselor"];
                                             $sql = "SELECT * FROM kaunselor WHERE ID = '" . $id_kaunselor . "'";
                                             $result3 = $conn->query($sql);
                                             if (mysqli_num_rows($result3) > 0) {
                                                 while ($row = mysqli_fetch_assoc($result3)) {
-                                                 $kaunselor_name = ["Nama"];
+                                                 $kaunselor_name = $row["Nama"];
                                                 }
                                             }
                                             ?>

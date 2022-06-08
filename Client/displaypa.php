@@ -67,7 +67,7 @@ $result = $conn->query($sql);
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="Index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -87,7 +87,7 @@ $result = $conn->query($sql);
                             <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                             Senarai tarikh ketidaksediaan kaunselor
                         </a>
-                        
+
                         <a class="nav-link" href="temujanjipa.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji

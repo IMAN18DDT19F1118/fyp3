@@ -38,7 +38,7 @@ include("connection.php");
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="Index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -94,7 +94,7 @@ include("connection.php");
                                 <!-- Form -->
                                 <div>
                                     <form action="temuprocess2.php" method="post">
-                                    <div class="from_wrap">
+                                        <div class="from_wrap">
                                             <label for="kan">Sila Pilih Pelajar Anda</label>
                                             <select name="pelajar" id="pelajar" required>
                                                 <option disabled>-Pilih Pelajar anda-</option>
@@ -118,7 +118,7 @@ include("connection.php");
                                             </select>
                                         </div>
                                         <br>
-                                    <div class="from_wrap">
+                                        <div class="from_wrap">
                                             <label for="kan">Sila Pilih Kaunselor Anda</label>
                                             <select name="kaunselor" id="kaunselor" required>
                                                 <option disabled>-Pilih Kaunselor-</option>
@@ -177,10 +177,12 @@ include("connection.php");
                                         </div>
                                         <br><br>
                                         <!--Submit button-->
-                                        <div class="input_wrap">
+                                        <div class="view">
                                             <input type="submit" value="Submit" class="submit_btn" name="submit">
                                             <br><br>
-                                            <input type="reset" value="Reset" class="reset_btn">
+                                        </div>
+                                        <div class="setup">
+                                            <input type="reset" value="set semula" class="reset_btn">
                                         </div>
 
                                     </form>
