@@ -9,7 +9,7 @@
 <style>
 body{   
     background: #eee;  
-    background: url(Kaunselor.jpg);
+    background: url(img/imagee.jpg);
     background-size: cover;
     background-position:top;
 }  
@@ -18,9 +18,10 @@ body{
     width:25%;  
     border-radius: 2px;  
     margin: 120px auto;  
-    background: grey;  
+    background: rebeccapurple;  
     padding: 50px;  
 }  
+
 
 .form{
   font-family: "Roboto",sans-serif;
@@ -66,7 +67,7 @@ body{
   border-radius: 10px;
   background: #7FFFD4;
   width: 100%;
-  border: 0;
+  border: 2;
   padding: 15px;
   color: #7FFFD4;
   font-size: 14px;
@@ -88,6 +89,7 @@ body{
 }
 h2{
     font-size : 55px;
+    background-color: aqua;
 }
 </style>
 <body> 

@@ -76,7 +76,7 @@ $result = $conn->query($sql);
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -129,9 +129,9 @@ $result = $conn->query($sql);
                             <tr>
                                 <th>Tarikh</th>
                                 <th>Masa</th>
-                                <th>Nama Pelajar</th>
-                                <th>No Matrik</th>
                                 <th>Status</th>
+                                <th>Nama</th>
+                                <th>No Pendaftaran</th>
                                 <th>Action</th>
                             </tr>
 
@@ -147,22 +147,6 @@ $result = $conn->query($sql);
                                         
                                         <td><?php echo $row["tarikh"]; ?></td>
                                         <td><?php echo $row["masa"]; ?></td>
-                                        <?php
-                                            $id_pelajar = $row["IC_Pelajar"];
-                                            $sql = "SELECT * FROM pelajar WHERE ID = '" . $id_pelajar . "'";
-                                            $result3 = $conn->query($sql);
-                                            if (mysqli_num_rows($result3) > 0) {
-                                                while ($row = mysqli_fetch_assoc($result3)) {
-                                                    $stud_name = $row["Nama"];
-                                                    $stud_matrik = $row["NoPendaftaran"];
-
-
-                                                }
-                                            }
-
-                                            ?>
-                                            <td><?php echo $stud_name ?></td>
-                                            <td><?php echo $stud_matrik ?></td>
                                         <form action="save2.php" method="POST">
                                             <?php
                                             if ($row["pilihan"] == "Diluluskan") {
@@ -185,6 +169,23 @@ $result = $conn->query($sql);
                                                     <input name="id" type="text" hidden value="<?php echo $id ?>">
                                                     <input type="submit" value="Simpan">
                                         </form>
+                                        <?php
+                                            $id_pelajar = $row["IC_Pelajar"];
+                                            $sql = "SELECT * FROM pelajar WHERE ID = '" . $id_pelajar . "'";
+                                            $result3 = $conn->query($sql);
+                                            if (mysqli_num_rows($result3) > 0) {
+                                                while ($row = mysqli_fetch_assoc($result3)) {
+                                                    $stud_name = $row["Nama"];
+                                                    $stud_matrik = $row["NoPendaftaran"];
+
+
+                                                }
+                                            }
+
+                                            ?>
+                                            <td><?php echo $stud_name ?></td>
+                                            <td><?php echo $stud_matrik ?></td>
+                                        
                                         </td>
 
                                         <td>

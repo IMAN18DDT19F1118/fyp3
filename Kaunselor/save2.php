@@ -1,9 +1,9 @@
 <?php
 require 'connection.php';
 $pilihan = $_POST['pilihan'];
-$id = $_POST['ID'];
+$id = $_POST['id'];
 
-$sql = "UPDATE temu_janji SET pilihan = '$pilihan' WHERE id='$id'";
+$sql = "UPDATE temu_janji SET pilihan = '$pilihan' WHERE ID='$id'";
 
 if ($conn->query($sql) === TRUE) {
 ?>

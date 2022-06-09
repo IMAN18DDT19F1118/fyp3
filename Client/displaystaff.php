@@ -30,7 +30,16 @@ $result = $conn->query($sql);
 
     tr:hover {
         background: #d1d1d1;
+    }.lulus{
+        background-color: greenyellow;
     }
+    .gagal{
+        background-color: red;
+    }
+    .mid{
+        background-color: aqua;
+    }
+
 </style>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,28 +124,30 @@ $result = $conn->query($sql);
                                 <th>Tarikh TemuJanji</th>
                                 <th>Masa</th>
                                 <th>Kaunselor</th>
-                                <th>Perbuatan</th>
+                                <th>Status</th>
+                                <th>Action</th>
                             </tr>
 
                             <?php
                             if (mysqli_num_rows($result) > 0) {
-                                while ($row = mysqli_fetch_assoc($result)) {
-                                    $id = $row["ID"];
+                                while ($row = mysqli_fetch_object($result)) {
+                                    $id = $row->ID;
+                                    $pilihan = $row->pilihan;
                                     //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
                             ?>
 
                                     <tr>
 
-                                        <td><?php echo $row["tarikh"]; ?></td>
-                                        <td><?php echo $row["masa"]; ?></td>
+                                        <td><?php echo $row->tarikh; ?></td>
+                                        <td><?php echo $row->masa; ?></td>
 
                                         <?php
-                                        $id_kaunselor = $row["IC_Kaunselor"];
+                                        $id_kaunselor = $row->IC_Kaunselor;
                                         $sql = "SELECT * FROM kaunselor WHERE ID = '" . $id_kaunselor . "'";
                                         $result3 = $conn->query($sql);
                                         if (mysqli_num_rows($result3) > 0) {
-                                            while ($row = mysqli_fetch_assoc($result3)) {
-                                                $kaunselor_name = $row["Nama"];
+                                            while ($row = mysqli_fetch_object($result3)) {
+                                                $kaunselor_name = $row->Nama;
                                             }
                                         }
 
@@ -144,6 +155,26 @@ $result = $conn->query($sql);
 
 
                                         <td><?php echo $kaunselor_name; ?></td>
+                                        <?php 
+                                        if ($pilihan == "Diluluskan"){
+                                            ?>
+                                            <td class="lulus"><?php echo $pilihan; ?></td>
+                                        <?php
+                                        }else if($pilihan == "Tidak Diluluskan"){
+                                        ?>
+                                        <td class="gagal"><?php echo $pilihan; ?></td>
+                                        <?php
+                                        }else if($pilihan == "Belum Diluluskan"){
+                                            ?>
+                                            <td class="mid"><?php echo $pilihan; ?></td>
+                                            <?php
+                                        } else {
+                                            ?>
+                                           <h1>error</h1>
+                                            <?php
+                                        }
+                                        ?>
+                                        
                                         <td>
                                             <a href="updatestaff.php?id=<?php echo $id; ?>">Kemas Kini</a>
 

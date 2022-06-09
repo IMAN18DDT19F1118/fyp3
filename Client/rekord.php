@@ -45,6 +45,15 @@ $result = $conn->query($sql);
     tr:hover {
         background: #d1d1d1;
     }
+    .lulus{
+        background-color: greenyellow;
+    }
+    .gagal{
+        background-color: red;
+    }
+    .mid{
+        background-color: aqua;
+    }
 </style>
 
 <body class="sb-nav-fixed">
@@ -114,6 +123,7 @@ $result = $conn->query($sql);
                         <div class="row">
                             <table border="1">
                                 <tr>
+                                    <th>Status</th>
                                     <th>Nama Pelajar</th>
                                     <th>No Matrik</th>
                                     <th>Nama Kaunselor</th>
@@ -130,7 +140,21 @@ $result = $conn->query($sql);
                                 ?>
 
                                         <tr>
-
+                                        <?php
+                                        if ($row["pilihan"] == "Diluluskan") {
+                                        ?>
+                                            <td class="lulus"><?php echo $row["pilihan"]; ?></td>
+                                        <?php
+                                        } else if ($row["pilihan"] == "Tidak Diluluskan") {
+                                        ?>
+                                            <td class="gagal"><?php echo $row["pilihan"]; ?></td>
+                                        <?php
+                                        } else {
+                                        ?>
+                                            <td class="mid"><?php echo $row["pilihan"]; ?></td>
+                                        <?php
+                                        }
+                                        ?>
 
                                             <?php
                                             $id_pelajar = $row["IC_Pelajar"];
@@ -162,7 +186,10 @@ $result = $conn->query($sql);
                                             }
                                             ?>
                                             <td><?php echo $kaunselor_name?></td>
-                                            <td></td>
+                                            <td>
+                                            <a href="laporan.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                <button type="submit">Laporan</button></a>
+                                            </td>
 
                                         </tr>
                                 <?php

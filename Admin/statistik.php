@@ -87,7 +87,7 @@ while ($row = mysqli_fetch_array($result)) {
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="login.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -142,7 +142,7 @@ while ($row = mysqli_fetch_array($result)) {
                         <li class="breadcrumb-item active">Temujanji</li>
                     </ol>
                     <div class="row">
-                        <div style="width:60%; hieght:50%; text-align:center">
+                        <div style="width:60%; height:50%; text-align:center">
                             <h3 class="page-header"> Tarikh & Masa </h3>
                             <div>Statitik</div>
                             <canvas id="chartjs_bar"></canvas>

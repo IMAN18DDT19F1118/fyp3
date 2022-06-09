@@ -66,7 +66,7 @@ $result = $conn->query($sql);
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -138,9 +138,9 @@ $result = $conn->query($sql);
                                         <td><?php echo $row["masa"]; ?></td>
                                         <td><?php echo $row["tempoh"]; ?></td>
                                         <td>
-                                            <a href="updatekalen.php?id=<?php echo $row["id"]; ?>">Update</a>
+                                            <a href="updatekalen.php?id=<?php echo $row["ID"]; ?>">Update</a>
 
-                                            <a href="deletekalendar.php?id=<?php echo $row["id"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
+                                            <a href="deletekalendar.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
                                         </td>
                                     </tr>
                             <?php

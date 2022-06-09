@@ -9,7 +9,7 @@ $tempoh=$_POST['utempoh'];
 
 
 {
-    $sql="INSERT INTO kauns(perkara,tarikh,masa,tempoh)VALUES('$perkara','$tarikh','$masa','$tempoh')";//create command not execute yet
+    $sql="INSERT INTO kaunseloraction(perkara,tarikh,masa,tempoh)VALUES('$perkara','$tarikh','$masa','$tempoh')";//create command not execute yet
 
     //execute
     if($conn->query($sql)===TRUE){

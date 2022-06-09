@@ -9,9 +9,10 @@ $pel = $_POST['pelajar'];
 $kaun=$_POST['kaunselor'];
 $date=$_POST['date'];
 $time=$_POST['schedule_time'];
+$status = "Belum Diluluskan";
 
 
-$sql="INSERT INTO temu_janji(IC_Pa, IC_Pelajar ,IC_Kaunselor, tarikh,masa) VALUE ('$ic', '$pel' ,'$kaun', '$date','$time')";
+$sql="INSERT INTO temu_janji(IC_Pa, IC_Pelajar ,IC_Kaunselor, tarikh,masa,pilihan) VALUE ('$ic', '$pel' ,'$kaun', '$date','$time','$status')";
 if($conn->query($sql)===TRUE){
     header("location: displaypa.php");
 }

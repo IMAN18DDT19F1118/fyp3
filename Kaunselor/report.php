@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM klien";
+$sql = "SELECT * FROM temu_janji";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
@@ -44,12 +44,17 @@ $result = $conn->query($sql);
     tr:hover {
         background: #d1d1d1;
     }
+
     .lulus {
         background-color: greenyellow;
     }
-    
+
     .gagal {
         background-color: red;
+    }
+
+    .mid {
+        background-color: aqua;
     }
 </style>
 
@@ -73,7 +78,7 @@ $result = $conn->query($sql);
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -123,11 +128,11 @@ $result = $conn->query($sql);
                     <div class="row">
                         <table border="1">
                             <tr>
-                                <th>Nama Pelajar</th>
-                                <th>No Matrik</th>
                                 <th>Tarikh</th>
                                 <th>Masa</th>
                                 <th>Status</th>
+                                <th>Nama Pelajar</th>
+                                <th>No Matrik</th>
                                 <th>Action</th>
                             </tr>
 
@@ -136,8 +141,6 @@ $result = $conn->query($sql);
                                 while ($row = mysqli_fetch_assoc($result)) {
                             ?>
                                     <tr>
-                                        <td><?php echo $row["namaPelajar"]; ?></td>
-                                        <td><?php echo $row["noMatrik"]; ?></td>
                                         <td><?php echo $row["tarikh"]; ?></td>
                                         <td><?php echo $row["masa"]; ?></td>
                                         <?php
@@ -145,15 +148,34 @@ $result = $conn->query($sql);
                                         ?>
                                             <td class="lulus"><?php echo $row["pilihan"]; ?></td>
                                         <?php
-                                        } else {
+                                        } else if ($row["pilihan"] == "Tidak Diluluskan") {
                                         ?>
                                             <td class="gagal"><?php echo $row["pilihan"]; ?></td>
                                         <?php
+                                        } else {
+                                        ?>
+                                            <td class="mid"><?php echo $row["pilihan"]; ?></td>
+                                        <?php
                                         }
                                         ?>
+                                        <?php
+                                        $id_pelajar = $row["IC_Pelajar"];
+                                        $sql = "SELECT * FROM pelajar WHERE ID = '" . $id_pelajar . "'";
+                                        $result3 = $conn->query($sql);
+                                        if (mysqli_num_rows($result3) > 0) {
+                                            while ($row = mysqli_fetch_assoc($result3)) {
+                                                $stud_name = $row["Nama"];
+                                                $stud_matrik = $row["NoPendaftaran"];
+                                            }
+                                        }
+
+                                        ?>
+                                        <td><?php echo $stud_name ?></td>
+                                        <td><?php echo $stud_matrik ?></td>
+
                                         <td>
-                                            <a href="laporan.php?id=<?php echo $row["id"]; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
-                                            <button type="submit">Laporan</button></a>
+                                            <a href="laporan.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                <button type="submit">Laporan</button></a>
                                         </td>
                                     </tr>
                             <?php
