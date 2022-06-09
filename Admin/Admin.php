@@ -79,112 +79,28 @@
                 <main>
                 <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Pengurusan Kaunseling Politeknik Tuanku Syed Sirajuddin</h1>
-                        <div class="main-banner" id="main-banner">
-                            
-                            <div class="imgban" id="imgban1">
-
-                            </div>
-                            <div class="imgban" id="imgban2">
-                                
-                            </div>
-                            <div class="imgban" id="imgban3">
-                                
-                            </div>
-                           
-                        </div>   
-                        <script>
-                            var bannerStatus = 1;
-                            var bannerTimer = 10;
-
-                            window.onload = function(){
-                                bannerLoop();
-                            }
-
-                            var startBannerLoop = setInterval(function(){
-                                bannerLoop();
-                            }, bannerTimer);
-
-                            document.getElementById("main-banner").onmouseenter = function(){
-                                clearInterval(startBannerLoop);
-                            }
-
-                            document.getElementById("main-banner").onmouseleave = function(){
-                                startBannerLoop = setInterval(function(){
-                                bannerLoop();
-                            }, bannerTimer);
-                            }
-
-
-
-                            function bannerLoop(){
-                                if(bannerStatus === 1){
-                                    document.getElementById("imgban2").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban1").style.right = "0px";
-                                    document.getElementById("imgban1").style.zIndex = "1000";
-                                    document.getElementById("imgban2").style.right = "-1200px";
-                                    document.getElementById("imgban2").style.zIndex = "1500";
-                                    document.getElementById("imgban3").style.right = "120px";
-                                    document.getElementById("imgban3").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban2").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 2;
-                                }
-                                
-                            else if(bannerStatus === 2){
-                                    document.getElementById("imgban3").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban2").style.right = "0px";
-                                    document.getElementById("imgban2").style.zIndex = "1000";
-                                    document.getElementById("imgban3").style.right = "-1200px";
-                                    document.getElementById("imgban3").style.zIndex = "1500";
-                                    document.getElementById("imgban1").style.right = "120px";
-                                    document.getElementById("imgban1").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban3").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 3;
-                                }
-                                else if(bannerStatus === 3){
-                                    document.getElementById("imgban1").style.opacity = "0";
-                                    setTimeout(function() => {
-                                    document.getElementById("imgban3").style.right = "0px";
-                                    document.getElementById("imgban3").style.zIndex = "1000";
-                                    document.getElementById("imgban1").style.right = "-1200px";
-                                    document.getElementById("imgban1").style.zIndex = "1500";
-                                    document.getElementById("imgban2").style.right = "120px";
-                                    document.getElementById("imgban2").style.zIndex = "500";
-                                    }, 500);
-                                    
-                                    setTimeout(function(){
-                                        document.getElementById("imgban1").style.opacity = "1";
-                                    }, 1000);
-                                    
-                                    var bannerStatus = 1;
-                                }
-                                
-                            }
-                        </script>
+                    
+                       
                         <div class="row">
                             <h1>Selamat Datang</h1>
-                            <br><br>
-                            <h1>Pengenalan</h1>
-                            <br><br>
-                            <p>Unit Pengurusan Psikologi (UPPsi) merupakan unit sokongan di bawah Timbalan Pengarah Sokongan Akademik,
-                             Politeknik Tuanku Syed Sirajuddin (PTSS). UPPsi berperanan membantu ke arah perkembangan warga 
-                             Politeknik (kakitangan dan pelajar) yang sejahtera emosi, pemikiran, fizikal, spiritual dan sosial 
-                             agar dapat berfungsi dengan baik dan dapat menyumbang ke arah kecemerlangan Politeknik.</p>
-                        </div>
-                        <center><h5>Carta Organisasi</h5></center>
-                        <div>
-                        <center><img src="gambar/carta.jpg" width="700" height="600"></center>
+                            <br><br><br>
+                            <h1>Senarai nama kaunelor PTSS</h1>
+                            <br><br><br>
+                            <p><h4>KETUA UNIT PENGURUSAN PSIKOLOGI </h4></p>
+                            <p><h5>WAN KAMARIAH BT WAN MAT</h5></p>
+                            <p>(PEGAWAI PSIKOLOGI S44)</p>
+                            <p>04-9886208</p>
+                            <p>kamariah@ptss.edu.my</p>
+                            <br><br><br>
+                            <p><h5>NORZILA BINTI MHD NOOR </h5></p>
+                            <P>(PEGAWAI PSIKOLOGI S44)</P>
+                            <p>04-9886205</p>
+                            <p>norzila@ptss.edu.my</p>
+                            <br><br><br>
+                            <p><h5>RAJA RABIAATUM ADAIAH BT RAJA MAMAT </h5></p>
+                            <P>(PEGAWAI PSIKOLOGI S44)</P>
+                            <p>04-9881100</p>
+                            <p>rabiaatum@ptss.edu.my</p>                             
                         </div>
                 </main>
                 <footer class="py-4 bg-light mt-auto">

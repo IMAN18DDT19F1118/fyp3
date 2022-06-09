@@ -95,33 +95,9 @@ include("connection.php");
                                 <div>
                                     <form action="temuprocess2.php" method="post">
                                         <div class="from_wrap">
-                                            <label for="kan">Sila Pilih Pelajar Anda</label>
-                                            <select name="pelajar" id="pelajar" required>
-                                                <option disabled>-Pilih Pelajar anda-</option>
-
-                                                <?php
-                                                $sql = "SELECT * FROM pelajar";
-                                                $result = $conn->query($sql);
-
-                                                if ($result->num_rows > 0) {
-                                                    // output data of each row
-                                                    while ($row = $result->fetch_assoc()) {
-                                                ?>
-                                                        <option value="<?php echo $row["ID"] ?>"><?php echo $row["Nama"] ?></option>
-
-                                                <?php
-                                                    }
-                                                }
-
-                                                ?>
-
-                                            </select>
-                                        </div>
-                                        <br>
-                                        <div class="from_wrap">
                                             <label for="kan">Sila Pilih Kaunselor Anda</label>
                                             <select name="kaunselor" id="kaunselor" required>
-                                                <option disabled>-Pilih Kaunselor-</option>
+                                                <option disabled>-Select Lecture-</option>
 
                                                 <?php
                                                 $sql = "SELECT * FROM kaunselor";
@@ -151,34 +127,13 @@ include("connection.php");
                                         <br><br>
 
                                         <div class="input_wrap">
-                                            <label for=masa>Masa</label><br>
-
-                                            <select name="schedule_time" required>
-                                                <option>-Select Time-</option>
-                                                <option value="08:00">08:00 am</option>
-                                                <option value="08:30">08:30 am</option>
-                                                <option value="09:00">09:00 am</option>
-                                                <option value="09:30">09:30 am</option>
-                                                <option value="10:00">10:00 am</option>
-                                                <option value="10:30">10:30 am</option>
-                                                <option value="11:00">11:00 am</option>
-                                                <option value="11:30">11:30 am</option>
-                                                <option value="12:00">12:00 pm</option>
-                                                <option value="12:30">12:30 pm</option>
-                                                <option value="1:00">1:00 pm</option>
-                                                <option value="1:30">1:30 pm</option>
-                                                <option value="2:00">2:00 pm</option>
-                                                <option value="2:30">2:30 pm</option>
-                                                <option value="3:00">3:00 pm</option>
-                                                <option value="3:30">3:30 pm</option>
-                                                <option value="4:00">4:00 pm</option>
-                                                <option value="4:30">4:30 pm</option>
-                                            </select>
+                                            <label for="schedule_time">Masa :</label>
+                                            <input type="time" id="schedule_time" name="schedule_time">
                                         </div>
                                         <br><br>
                                         <!--Submit button-->
                                         <div class="view">
-                                            <input type="submit" value="Submit" class="submit_btn" name="submit">
+                                            <input type="submit" value="Hantar" class="submit_btn" name="submit">
                                             <br><br>
                                         </div>
                                         <div class="setup">

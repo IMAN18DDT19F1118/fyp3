@@ -90,7 +90,7 @@
                             <p><h5>NORZILA BINTI MHD NOOR </h5></p>
                             <P>(PEGAWAI PSIKOLOGI S44)</P>
                             <p>04-9886205</p>
-                            < p>norzila@ptss.edu.my</p>
+                            <p>norzila@ptss.edu.my</p>
                             <br><br><br>
                             <p><h5>RAJA RABIAATUM ADAIAH BT RAJA MAMAT </h5></p>
                             <P>(PEGAWAI PSIKOLOGI S44)</P>

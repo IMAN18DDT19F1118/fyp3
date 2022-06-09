@@ -77,58 +77,48 @@ $row=$resultusr->fetch_assoc();
             </div>
             <div id="layoutSidenav_content">
                 <main>
-                    <div class="container-fluid px-4">
-                        <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
-                        <center><ins><b>mengubah masa dan tarikh</b><ins></center>
+                <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Unit Kaunseling PTSS</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Kemaskini</li>
+                    </ol>
+                    <div class="row">
+                        <div class="wrapper">
+                            <div class=registration_from>
 
-<form name="temujanji" action="updateprocess3.php" method="post">
-    <center>
-        <br>
-        <b>Tarikh : </b>
-        <input type="date" name="date" value="<?php echo $row["tarikh"];?>" required>
-        <br><br>
+                                <div class="title">
+                                    Kemaskini temujanji
+                                </div>
 
-        <b>Masa : </b>
-        <select name="schedule_time" <?php echo $row["masa"];?> required>
-                                        <option>-Select Time-</option>
-                                        <option value="08:00">08:00 am</option>
-                                        <option value="08:30">08:30 am</option>
-                                        <option value="09:00">09:00 am</option>
-                                        <option value="09:30">09:30 am</option>
-                                        <option value="10:00">10:00 am</option>
-                                        <option value="10:30">10:30 am</option>
-                                        <option value="11:00">11:00 am</option>
-                                        <option value="11:30">11:30 am</option>
-                                        <option value="12:00">12:00 pm</option>
-                                        <option value="12:30">12:30 pm</option>
-                                        <option value="1:00">1:00 pm</option>
-                                        <option value="1:30">1:30 pm</option>
-                                        <option value="2:00">2:00 pm</option>
-                                        <option value="2:30">2:30 pm</option>
-                                        <option value="3:00">3:00 pm</option>
-                                        <option value="3:30">3:30 pm</option>
-                                        <option value="4:00">4:00 pm</option>
-                                        <option value="4:30">4:30 pm</option>
-                                    </select>
-        <br><br>
-    </center>
+                                <form name="temujanji" action="updateprocess.php" method="post">
 
-    <br>
+                                    <div class="input_wrap">
+                                        <Label for="tarikh">Tarikh :</Label>
+                                        <input type="date" name="date" value="<?php echo $row["tarikh"]; ?>" required>
+                                    </div>
 
-    <center>
-        <input type="submit" name="Submit" value="Update">
-        <input type="reset" value="Reset">
-        <input type="hidden" name="id" value="<?php echo $row["ID"];?>">
-    </center>
-</form>
+                                    <div class="input_wrap">
+                                        <label for="masau">Masa :</label>
+                                        <input type="time" id="schedule_time" name="schedule_time" value="<?php echo $row["masa"]; ?>" required>
+                                    </div>
+
+
+                                    <br>
+
+                                    <div class="input_wrap">
+                                        <input type="submit" name="Submit" value="Update">
+                                    </div><br>
+                                    <div class="input_wrap">
+                                        <input type="reset" value="Reset">
+                                        <input type="hidden" name="id" value="<?php echo $row["ID"]; ?>">
+                                    </div><br>
+
+                                </form>
+                            </div>
+
+
                         </div>
-                        
-                            
-                    </div>
                 </main>
             </div>
         </div>

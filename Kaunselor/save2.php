@@ -1,7 +1,7 @@
 <?php
 require 'connection.php';
 $pilihan = $_POST['pilihan'];
-$id = $_POST['id'];
+$id = $_POST['ID'];
 
 $sql = "UPDATE temu_janji SET pilihan = '$pilihan' WHERE id='$id'";
 

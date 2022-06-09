@@ -3,7 +3,7 @@ include('connection.php');
 
 $uid = $_GET['id'];
 
-$deletekalendar = "DELETE FROM kauns WHERE id='$uid'";
+$deletekalendar = "DELETE FROM kaunseloraction WHERE id='$uid'";
 $resultdelete = $conn->query($deletekalendar);
 
 ?>

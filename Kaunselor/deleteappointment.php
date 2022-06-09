@@ -3,7 +3,7 @@ include('connection.php');
 
 $uid = $_GET['id'];
 
-$deleteappointment = "DELETE FROM klien WHERE id='$uid'";
+$deleteappointment = "DELETE FROM temu_janji WHERE id='$uid'";
 $resultdelete = $conn->query($deleteappointment);
 
 ?>

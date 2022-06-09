@@ -4,11 +4,54 @@ include('connection.php');
 $sql = "SELECT * FROM temu_janji";
 $result = mysqli_query($conn, $sql);
 $chart_data = "";
+
+while ($row = mysqli_fetch_array($result)) {
+    $masa[] = $row['ID'];
+    $pelajar[] = $row['IC_Pelajar'];
+
+    $ic = $row['IC_Kaunselor'];
+$count = 1;
+
+    $sql = "SELECT * FROM kaunselor WHERE ID = '$ic'";
+    $result2 = mysqli_query($conn, $sql);
+   
+    while ($row = mysqli_fetch_array($result2)) {
+    
+        //$tarikh[]  = $row['tarikh'];
+        $tarikh[]  = $row['Nama']  ;
+        $count++;
+
+       
+    }
+    //$tarikh[]  = $row['tarikh'];
+    
+}
+
+/* $sql = "SELECT * FROM kaunselor";
+$result = mysqli_query($conn, $sql);
+$chart_data = "";
+while ($row = mysqli_fetch_array($result)) {
+    $ic_kaunselor = $row['ID'];
+    $nama_kaunselor = $row['Nama'];
+    $count = 1;
+    $sql = "SELECT * FROM temu_janji WHERE IC_Kaunselor = " . $ic_kaunselor;
+    $result2 = mysqli_query($conn, $sql);
+    while ($row = mysqli_fetch_array($result2)) {
+        $bilangan[$nama_kaunselor][$count];
+    $count++;
+    }
+}
+
+$sql = "SELECT * FROM temu_janji WHERE IC_Kaunselor = " ;
+$result = mysqli_query($conn, $sql);
+$chart_data = "";
 while ($row = mysqli_fetch_array($result)) {
 
     $tarikh[]  = $row['tarikh'];
     $masa[] = $row['masa'];
 }
+*/
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -99,7 +142,7 @@ while ($row = mysqli_fetch_array($result)) {
                         <li class="breadcrumb-item active">Temujanji</li>
                     </ol>
                     <div class="row">
-                        <div style="width:60%;hieght:50%;text-align:center">
+                        <div style="width:60%; hieght:50%; text-align:center">
                             <h3 class="page-header"> Tarikh & Masa </h3>
                             <div>Statitik</div>
                             <canvas id="chartjs_bar"></canvas>
@@ -149,7 +192,7 @@ while ($row = mysqli_fetch_array($result)) {
                     "#7040fa",
                     "#ff004e"
                 ],
-                data: <?php echo json_encode($masa); ?>,
+                data: <?php echo json_encode($pelajar); ?>,
             }]
         },
         options: {
@@ -168,4 +211,5 @@ while ($row = mysqli_fetch_array($result)) {
         }
     });
 </script>
+
 </html>

@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM kauns";
+$sql = "SELECT * FROM kaunseloraction";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
