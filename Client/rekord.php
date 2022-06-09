@@ -117,7 +117,7 @@ $result = $conn->query($sql);
                                     <th>Nama Pelajar</th>
                                     <th>No Matrik</th>
                                     <th>Nama Kaunselor</th>
-                                    <th>Laporan</th>
+                                    <th>Action</th>
                                 </tr>
 
                                 <?php

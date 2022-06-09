@@ -62,9 +62,9 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 Statistik
                             </a>
-                            <a class="nav-link" href="kalendar.php">
+                            <a class="nav-link" href="senarai.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                                Kalendar
+                                Senarai Temujanji
                             </a>
                            
                         </div>

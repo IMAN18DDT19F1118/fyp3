@@ -54,7 +54,7 @@
                                     <a class="nav-link" href="kaunselor.php">Kaunselor</a>
                                     <a class="nav-link" href="pelajar.php">Pelajar</a>
                                     <a class="nav-link" href="staff.php">Staff</a>
-                                    <a class="nav-link" href="kelas.php">Kelas</a>
+                                   
                                     <a class="nav-link" href="pa.php">Penasihat Akademik</a>
                                 </nav>
                             </div>

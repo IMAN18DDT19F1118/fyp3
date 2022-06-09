@@ -64,7 +64,7 @@
                                 <a class="nav-link" href="kaunselor.php">Kaunselor</a>
                                 <a class="nav-link" href="pelajar.php">Pelajar</a>
                                 <a class="nav-link" href="staff.php">Staff</a>
-                                <a class="nav-link" href="kelas.php">Kelas</a>
+                               
                                 <a class="nav-link" href="pa.php">Penasihat Akademik</a>
                             </nav>
                         </div>
@@ -116,7 +116,7 @@
                                         <!-- City Name input place -->
                                         <div class="input_wrap">
                                             <label for="passw">Kata Laluan</label>
-                                            <input type="text" id="passw"  name  = "passw"  required>
+                                            <input type="password" id="passw"  name  = "passw"  required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="notel">No Telefon</label>

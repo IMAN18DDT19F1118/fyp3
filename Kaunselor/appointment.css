@@ -1,0 +1,18 @@
+  
+  /* Submit Button */
+  .submit_btn{
+    font-size:12px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 145px;
+    background: #0d6ad7;
+    padding: 10px;
+    border: 0;
+    color:white;
+  }
+  
+  /* Button Hover effect */
+  .submit_btn:hover{
+    background: #051c94;
+  }

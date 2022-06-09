@@ -18,6 +18,7 @@ $row=$resultusr->fetch_assoc();
         <title>KAUNSELOR</title>
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="css/styles.css" rel="stylesheet" />
+        <link href="kalendar.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -56,12 +57,12 @@ $row=$resultusr->fetch_assoc();
 
                             <a class="nav-link" href="kemaskalendar.php">
                                 <div class="sb-nav-link-icon"><i class="far fa-calendar"></i></div>
-                                Kemaskini Kalendar
+                                Kemaskini Ketidaksediaan 
                             </a>
 
                             <a class="nav-link" href="kalendar.php">
                                 <div class="sb-nav-link-icon"><i class="far fa-calendar-alt"></i></div>
-                                Kalendar
+                                Senarai Ketidaksediaan
                             </a>
 
                             <a class="nav-link" href="report.php">
@@ -83,50 +84,66 @@ $row=$resultusr->fetch_assoc();
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Unit Kaunseling PTSS</h1>
                         <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Kemaskini Kalendar</li>
+                            <li class="breadcrumb-item active">Kemaskini Ketidaksediaan</li>
                         </ol>
                         <div class="row">
-                        <form method ="post" action="updatekalendar.php"> 
 
-                        <label for="lectu">Nama Kaunselor :</label>
-                        <div>
-                        <select name="lectu" id="lectu" value="<?php echo $row["lect"];?>" required> >
-                            <option value="Puan Wan Kamariah">Puan Wan Kamariah </option>
-                            <option value="Puan Norzila">Puan Norzila </option>
-                            <option value="Puan Raja Rabiaatum Adawiah">Puan Raja Rabiaatum Adawiah </option>
-                        </select><br><br>
+                        <div class="wrapper">
+
+                        <div class="registration_form">
+                        <!-- Title -->
+                        <div class="title">
+                            Kemaskini Ketidaksediaan 
                         </div>
 
+                        <form name="myform" method ="post" action="updatekalendar.php"> 
+
+                        <div class="form_wrap">
+
+                        <div class="input_wrap">
                         <label for="perkarau">Perkara :</label>
-                        <div>
-                        <textarea id="perkarau" name="perkarau" rows="4" cols="80"  value="<?php echo $row["perkara"];?>" required></textarea><br><br>
+                        <textarea id="perkarau" name="perkarau" rows="2" cols="60"  value="<?php echo $row["perkara"];?>" required></textarea>
                         </div>
 
+                        <div class="input_grp">
+
+                        <div class="input_wrap">
                         <label for="tarikhu">Tarikh :</label>
-                        <div>
-                        <input style="" type="date" id="tarikhu" name="tarikhu"  value="<?php echo $row["tarikh"];?>" required><br><br>
+                        <input style="" type="date" id="tarikhu" name="tarikhu"  value="<?php echo $row["tarikh"];?>" required>
                         </div>
 
+                        <div class="input_wrap">
                         <label for="masau">Masa :</label>
-                        <div>
-                        <input type="time" id="masau" name="masau"  value="<?php echo $row["masa"];?>" required><br><br>
+                        <input type="time" id="masau" name="masau"  value="<?php echo $row["masa"];?>" required>
                         </div>
 
+                        <div class="input_wrap">
                         <label for="tempohu">Tempoh :</label>
-                        <div>
                         <select name="tempohu" id="tempohu"  value="<?php echo $row["tempoh"];?>" required> 
                             <option value="no">-----Pilih jam-----</option>
                             <option value="1 jam">1 jam</option>
                             <option value="2 jam">2 jam</option>
                             <option value="3 jam">3 jam</option>
-                        </select><br><br>
+                            <option value="4 jam">4 jam</option>
+                            <option value="5 jam">5 jam</option>
+                        </select>
+                        </div>
+
                         </div>
                  
-                        <div>
-                        <input type="submit" value="Update" name = "submit_btn">
-                        <input type="reset" value="Cancel" name = "cancelbtn">
+                        <div class="input_grp">
+
+                        <div class="input_wrap">
+                        <input type="submit" value="Kemaskini" name = "submit_btn" class="submit_btn">
+                        </div><br>
+
+                        <div class="input_wrap">
+                        <input type="reset" value="Batal" name = "cancelbtn" class="submit_btn">
                         <input type="hidden" name="id" value="<?php echo $row["id"];?>">
                         </div>
+
+                        </div>
+
                         </form>
                     </div>
                 </main>

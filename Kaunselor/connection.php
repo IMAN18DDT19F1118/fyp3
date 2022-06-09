@@ -6,10 +6,7 @@ $dbname="kaunseling";
 
 error_reporting(E_ERROR | E_WARNING | E_PARSE);
 
-$conn = mysqli_connect($servername,$username,$password,$dbname);
-
-//Option2
-//$conn=new mysqli("localhost","root","","test");
+$conn=new mysqli("localhost","root","","kaunseling");
 
 //Check Connection
 if(!$conn)
@@ -18,6 +15,6 @@ if(!$conn)
 
 }
 else{
-    
+    echo"Connection is succesfully created";
 }
 ?>

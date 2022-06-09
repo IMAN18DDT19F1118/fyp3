@@ -36,7 +36,7 @@
         if($count == 1){  
             echo "login successful";
              $_SESSION['ic'] = $ic;
-             header('location:Kaunselor/kaunselor.php');
+             header('location:Kaunselor/appointment.php');
          }else{
              ?>
              <script>

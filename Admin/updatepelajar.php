@@ -72,7 +72,7 @@ $row=$resultusr->fetch_assoc();
                                 <a class="nav-link" href="kaunselor.php">Kaunselor</a>
                                 <a class="nav-link" href="pelajar.php">Pelajar</a>
                                 <a class="nav-link" href="staff.php">Staff</a>
-                                <a class="nav-link" href="kelas.php">Kelas</a>
+                   
                                 <a class="nav-link" href="pa.php">Penasihat Akademik</a>
                             </nav>
                         </div>
@@ -80,9 +80,9 @@ $row=$resultusr->fetch_assoc();
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Statistik
                         </a>
-                        <a class="nav-link" href="kalendar.php">
+                        <a class="nav-link" href="senarai.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
-                            Kalendar
+                           Senarai Temujanji
                         </a>
 
                     </div>

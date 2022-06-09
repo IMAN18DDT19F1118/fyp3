@@ -3,8 +3,8 @@ include('connection.php');
 
 $uid = $_GET['id'];
 
-$deletekalendar = "DELETE FROM kauns WHERE id='$uid'";
-$resultdelete = $conn->query($deletekalendar);
+$deleteappointment = "DELETE FROM klien WHERE id='$uid'";
+$resultdelete = $conn->query($deleteappointment);
 
 ?>
 
@@ -13,5 +13,5 @@ $resultdelete = $conn->query($deletekalendar);
     if (resultdelete) {
         //Logic to delete the item
     }
-    window.location ="kalendar.php"
+    window.location = "appointment.php"
 </script>
