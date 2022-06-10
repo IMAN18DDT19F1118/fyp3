@@ -139,6 +139,9 @@ $result = $conn->query($sql);
                             <?php
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
+                                    $id = $row["ID"];
+                                    $_SESSION["ID"] = $id;
+
                             ?>
                                     <tr>
                                         <td><?php echo $row["tarikh"]; ?></td>
@@ -166,6 +169,7 @@ $result = $conn->query($sql);
                                             while ($row = mysqli_fetch_assoc($result3)) {
                                                 $stud_name = $row["Nama"];
                                                 $stud_matrik = $row["NoPendaftaran"];
+                                                $id = $row['ID'];
                                             }
                                         }
 
@@ -174,7 +178,7 @@ $result = $conn->query($sql);
                                         <td><?php echo $stud_matrik ?></td>
 
                                         <td>
-                                            <a href="laporan.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                            <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
                                                 <button type="submit">Laporan</button></a>
                                         </td>
                                     </tr>

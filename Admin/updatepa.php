@@ -126,7 +126,7 @@ $row=$resultusr->fetch_assoc();
                                         
                                         <div class="input_wrap">
                                             <label for="passw">Kata Laluan</label>
-                                            <input type="text" id="passw"  name ="upassw" value="<?php echo $row["katalaluan"];?>" required>
+                                            <input type="password" id="passw"  name ="upassw" value="<?php echo $row["katalaluan"];?>" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="unotel">No Telefon</label>

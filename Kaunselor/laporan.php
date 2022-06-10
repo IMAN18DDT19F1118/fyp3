@@ -1,6 +1,6 @@
 <?php
 include('connection.php');
-
+$id = $_GET["id"];
 $sql = "SELECT * FROM temu_janji";
 //$result = mysqli_query($conn,$sql);
 
@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="print.css" rel="stylesheet" media="print"/>
+    <link href="print.css" rel="stylesheet" media="print" />
 </head>
 <style>
     table {
@@ -90,30 +90,12 @@ $result = $conn->query($sql);
                 <?php
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
+                        $id =$row["ID"];
+                        $_SESSION["ID"] = $id;
                 ?>
                         <center>
                             <table border="1">
-                                <tr>
-                                    <th>Nama Pelajar :</th>
-                                    <td><?php echo $row["namaPelajar"]; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>No Matrik :</th>
-                                    <td><?php echo $row["noMatrik"]; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Tarikh :</th>
-                                    <td><?php echo $row["tarikh"]; ?></td>
-                                </tr>
-
-                                <tr>
-                                    <th>Masa :</th>
-                                    <td><?php echo $row["masa"]; ?></td>
-                                </tr>
-
-                                <tr>
+                            <tr>
                                     <th>Status :</th>
                                     <?php
                                     if ($row["pilihan"] == "Diluluskan") {
@@ -127,6 +109,38 @@ $result = $conn->query($sql);
                                     }
                                     ?>
                                 </tr>
+
+                                <tr>
+                                    <th>Tarikh :</th>
+                                    <td><?php echo $row["tarikh"]; ?></td>
+                                </tr>
+
+                                <tr>
+                                    <th>Masa :</th>
+                                    <td><?php echo $row["masa"]; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Nama Pelajar :</th>
+                                    <?php
+                                    $id_pelajar = $row["IC_Pelajar"];
+                                    $sql = "SELECT * FROM pelajar WHERE ID = '" . $id_pelajar . "'";
+                                    $result3 = $conn->query($sql);
+                                    if (mysqli_num_rows($result3) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result3)) {
+                                            $stud_name = $row["Nama"];
+                                            $stud_matrik = $row["NoPendaftaran"];
+                                        }
+                                    }
+                                    ?>
+                                    <td><?php echo $stud_name ?></td>
+                                </tr>
+
+                                <tr>
+                                    <th>No Matrik :</th>
+                                    <td><?php echo $stud_matrik ?></td>
+                                </tr>
+
+
 
                                 <tr>
                                     <th>Komen :</th>

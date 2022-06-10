@@ -54,6 +54,10 @@ $result = $conn->query($sql);
     .gagal {
         background-color: red;
     }
+    
+    .mid{
+        background-color: aqua;
+    }
 </style>
 
 <body class="sb-nav-fixed">

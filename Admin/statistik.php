@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM temu_janji";
+$sql = "SELECT * FROM temu_janji WHERE pilihan = 'Diluluskan' " ;
 $result = mysqli_query($conn, $sql);
 $chart_data = "";
 

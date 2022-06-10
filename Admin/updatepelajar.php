@@ -124,7 +124,7 @@ $row=$resultusr->fetch_assoc();
                                         <!-- City Name input place -->
                                         <div class="input_wrap">
                                             <label for="upassw">Kata Laluan</label>
-                                            <input type="text" id="upassw"  name  = "upassw"  value="<?php echo $row["katalaluan"];?>" required>
+                                            <input type="password" id="upassw"  name  = "upassw"  value="<?php echo $row["katalaluan"];?>" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="unotel">No Telefon</label>
