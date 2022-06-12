@@ -140,6 +140,7 @@ $result = $conn->query($sql);
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $id = $row["ID"];
+                                    $pilihan = $row["pilihan"];
                                     $_SESSION["ID"] = $id;
 
                             ?>
@@ -169,7 +170,6 @@ $result = $conn->query($sql);
                                             while ($row = mysqli_fetch_assoc($result3)) {
                                                 $stud_name = $row["Nama"];
                                                 $stud_matrik = $row["NoPendaftaran"];
-                                                $id = $row['ID'];
                                             }
                                         }
 
@@ -178,8 +178,22 @@ $result = $conn->query($sql);
                                         <td><?php echo $stud_matrik ?></td>
 
                                         <td>
-                                            <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
-                                                <button type="submit">Laporan</button></a>
+                                            <?php
+
+                                            if ($pilihan == "Belum Diluluskan" || $pilihan == "Tidak Diluluskan") {
+                                            ?>
+                                                <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                    <button type="submit" disabled>Laporan</button></a>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                    <button type="submit">Laporan</button></a>
+                                            <?php
+                                            }
+
+                                            ?>
+
                                         </td>
                                     </tr>
                             <?php

@@ -1,51 +1,31 @@
 <?php
 include('connection.php');
 
-$sql = "SELECT * FROM temu_janji WHERE pilihan = 'Diluluskan' ";
+$sql = "SELECT * FROM temu_janji WHERE pilihan = 'Diluluskan' " ;
 $result = mysqli_query($conn, $sql);
 $chart_data = "";
 
 while ($row = mysqli_fetch_array($result)) {
     $masa[] = $row['ID'];
     $pelajar[] = $row['IC_Pelajar'];
-    $tarikh[] = $row['tarikh'];
-    $pilihan[] = $row['pilihan'];
-    $month = explode("-", $row['tarikh']);
-}
-$count = 0;
-$bulan3 = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-while ($count <= 12) {
-    if ($bulan3[1] == "01") {
-        $bulan[$count] = "Januari";
-    } else if ($bulan3[1] == "02") {
-        $bulan[$count] = "Februari";
-    } else if ($bulan3[1] == "03") {
-        $bulan[$count] = "Mac";
-    } else if ($bulan3[1] == "04") {
-        $bulan[$count] = "April";
-    } else if ($bulan3[1] == "05") {
-        $bulan[$count] = "May";
-    } else if ($bulan3[1] == "06") {
-        $bulan[$count] = "Jun";
-    } else if ($bulan3[1] == "07") {
-        $bulan[$count] = "Julai";
-    } else if ($bulan3 == "08") {
-        $bulan[$count] = "Ogos";
-    } else if ($bulan3[1] == "09") {
-        $bulan[$count] = "September";
-    } else if ($bulan3[1] == "10") {
-        $bulan[$count] = "Oktober";
-    } else if ($bulan3[1] == "11") {
-        $bulan[$count] = "November";
-    } else if ($bulan[1] == "12") {
-        $bulan[$count] = "Disember";
+
+    $ic = $row['IC_Kaunselor'];
+$count = 1;
+
+    $sql = "SELECT * FROM kaunselor WHERE ID = '$ic'";
+    $result2 = mysqli_query($conn, $sql);
+   
+    while ($row = mysqli_fetch_array($result2)) {
+    
+        //$tarikh[]  = $row['tarikh'];
+        $tarikh[]  = $row['Nama']  ;
+        $count++;
+
+       
     }
-    $count++;
+    //$tarikh[]  = $row['tarikh'];
+    
 }
-
-
-
-
 
 /* $sql = "SELECT * FROM kaunselor";
 $result = mysqli_query($conn, $sql);
@@ -201,7 +181,7 @@ while ($row = mysqli_fetch_array($result)) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: <?php echo json_encode($bulan); ?>,
+            labels: <?php echo json_encode($tarikh); ?>,
             datasets: [{
                 backgroundColor: [
                     "#5969ff",

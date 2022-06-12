@@ -1,7 +1,7 @@
 <?php
 include('connection.php');
-
-$sql = "SELECT * FROM temu_janji";
+$id = $_GET['id'];
+$sql = "SELECT * FROM temu_janji WHERE ID = " . $id;
 //$result = mysqli_query($conn,$sql);
 
 //opyion2

@@ -138,17 +138,13 @@ $result = $conn->query($sql);
                                 <th>No Pendaftaran</th>
                                 <th>Action</th>
                             </tr>
-
                             <?php
                             if (mysqli_num_rows($result) > 0) {
                                 while ($row = mysqli_fetch_assoc($result)) {
                                     $id = $row["ID"];
-                                    
                                     //    $_SESSION['id'] = $id;
                             ?>
                                     <tr>
-                                        
-                                        
                                         <td><?php echo $row["tarikh"]; ?></td>
                                         <td><?php echo $row["masa"]; ?></td>
                                         <form action="save2.php" method="POST">
@@ -159,7 +155,13 @@ $result = $conn->query($sql);
                                                     <select id="pilihan_kaunselor" name="pilihan">
                                                         <option value="<?php echo $row["pilihan"] ?>" disabled><?php echo $row['pilihan'] ?></option>
                                                     <?php
-                                                } else {
+                                                } else if ($row["pilihan"] == "Belum Diluluskan") {
+                                                    ?>
+                                                <td class="mid">
+                                                    <select id="pilihan_kaunselor" name="pilihan">
+                                                        <option class="mid" value="<?php echo $row["pilihan"] ?>"><?php echo $row['pilihan'] ?></option>
+                                                    <?php
+                                                }else {
                                                     ?>
                                                 <td class="gagal">
                                                     <select id="pilihan_kaunselor" name="pilihan">

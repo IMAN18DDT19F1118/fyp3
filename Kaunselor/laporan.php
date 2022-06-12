@@ -1,7 +1,8 @@
 <?php
 include('connection.php');
-$id = $_GET["id"];
-$sql = "SELECT * FROM temu_janji";
+session_start();
+    $id = $_GET["id"];
+$sql = "SELECT * FROM temu_janji WHERE ID = " . $id;
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
@@ -91,6 +92,7 @@ $result = $conn->query($sql);
                 if (mysqli_num_rows($result) > 0) {
                     while ($row = mysqli_fetch_assoc($result)) {
                         $id =$row["ID"];
+                        $komen = $row["komen"];
                         $_SESSION["ID"] = $id;
                 ?>
                         <center>
@@ -140,16 +142,18 @@ $result = $conn->query($sql);
                                     <td><?php echo $stud_matrik ?></td>
                                 </tr>
 
-
-
                                 <tr>
+                                    <form action="simpankomen.php" method="POST">
+                                        <input type="text" name="id_komen" value="<?php echo $id?>" hidden>
                                     <th>Komen :</th>
-                                    <td><textarea id="komen" name="komen" rows="5" cols="50" required></textarea></td>
+                                    <td><textarea id="komen" name="komen" rows="5" cols="50" required><?php echo $komen?></textarea></td>
                                 </tr>
 
                                 <td colspan="2">
                                     <center>
                                         <input type="submit" value="Simpan">
+                                    </form>
+
                                         <button onclick="window.print();" class="btn btn-primary">Print</button>
                                     </center>
                                 </td>

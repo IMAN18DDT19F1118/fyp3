@@ -187,7 +187,7 @@ $result = $conn->query($sql);
                                             ?>
                                             <td><?php echo $kaunselor_name?></td>
                                             <td>
-                                            <a href="laporan.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                            <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
                                                 <button type="submit">Laporan</button></a>
                                             </td>
 
