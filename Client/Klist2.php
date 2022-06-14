@@ -58,7 +58,7 @@ tr:hover {
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
+                        <li><a class="dropdown-item" href="http://localhost:8080/fyp3/">Logout</a></li>
                     </ul>
                 </li>
             </ul>
@@ -124,7 +124,7 @@ tr:hover {
                 <tr>
                    
                     <td><?php echo $row["Nama_kauns"]; ?></td>
-                    <td><?php echo $row["pekara"]; ?></td>                    
+                    <td><?php echo $row["perkara"]; ?></td>                    
                     <td><?php echo $row["tarikh"]; ?></td>                    
                     <td><?php echo $row["masa"]; ?></td>                    
                     <td><?php echo $row["tempoh"]; ?></td>

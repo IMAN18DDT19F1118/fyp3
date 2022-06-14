@@ -18,7 +18,16 @@ include("connection.php");
     <link href="kaunselor.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
-
+<style>
+    select {
+        width: 150px;
+        margin: 10px;
+    }
+    select:focus {
+        min-width: 150px;
+        width: auto;
+    }
+</style>
 <body class="sb-nav-fixed">
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
         <!-- Navbar Brand-->
@@ -38,7 +47,7 @@ include("connection.php");
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/fyp3/">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -93,9 +102,9 @@ include("connection.php");
                                 <br><br>
                                 <!-- Form -->
                                 <div>
-                                <form action="temuprocess2.php" method="post">
+                                    <form action="temuprocess2.php" method="post">
                                         <div class="from_wrap">
-                                            <label for="kan">Sila Pilih Pelajar Anda</label>
+                                            <label for="kan">Sila Pilih Pelajar Anda :</label><br>
                                             <select name="pelajar" id="pelajar" required>
                                                 <option disabled>-Pilih Pelajar anda-</option>
 
@@ -117,9 +126,9 @@ include("connection.php");
 
                                             </select>
                                         </div>
-                                        <br>
+                                        
                                         <div class="from_wrap">
-                                            <label for="kan">Sila Pilih Kaunselor Anda</label>
+                                            <label for="kan">Sila Pilih Kaunselor Anda :</label><br>
                                             <select name="kaunselor" id="kaunselor" required>
                                                 <option disabled>-Pilih Kaunselor-</option>
 
@@ -146,13 +155,9 @@ include("connection.php");
                                         <div class="input_wrap">
                                             <label for="temujanji">TemuJanji</label><br>
                                             <input type="date" id="temujanji" name="date" required>
-                                        </div>
 
-                                        <br><br>
-
-                                        <div class="input_wrap">
-                                                <label for="schedule_time">Masa :</label>
-                                                <input type="time" id="schedule_time" name="schedule_time">
+                                            <label for="schedule_time">Masa :</label>
+                                            <input type="time" id="schedule_time" name="schedule_time">
                                         </div>
                                         <br><br>
                                         <!--Submit button-->

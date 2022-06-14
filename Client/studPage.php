@@ -37,7 +37,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/fyp3/">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -76,27 +76,30 @@
                         <h1 class="mt-4">Unit Pengurusan Kaunseling Politeknik Tuanku Syed Sirajuddin</h1>
                     
                        
-                        <div class="row">
+                        
                             <h1>Selamat Datang</h1>
                             <br><br><br>
                             <h1>Senarai nama kaunelor PTSS</h1>
                             <br><br><br>
+                            <img src="img/image1.jpeg" alt="" width="20%" height="200">
                             <p><h4>KETUA UNIT PENGURUSAN PSIKOLOGI </h4></p>
                             <p><h5>WAN KAMARIAH BT WAN MAT</h5></p>
                             <p>(PEGAWAI PSIKOLOGI S44)</p>
                             <p>04-9886208</p>
                             <p>kamariah@ptss.edu.my</p>
                             <br><br><br>
+                            <img src="img/image2.jpeg" alt="" width="20%" height="200">
                             <p><h5>NORZILA BINTI MHD NOOR </h5></p>
                             <P>(PEGAWAI PSIKOLOGI S44)</P>
                             <p>04-9886205</p>
                             <p>norzila@ptss.edu.my</p>
                             <br><br><br>
+                            <img src="img/image3.jpeg" alt="" width="20%" height="200">
                             <p><h5>RAJA RABIAATUM ADAIAH BT RAJA MAMAT </h5></p>
                             <P>(PEGAWAI PSIKOLOGI S44)</P>
                             <p>04-9881100</p>
                             <p>rabiaatum@ptss.edu.my</p>                             
-                        </div>
+                        
             
                     
                 </main>

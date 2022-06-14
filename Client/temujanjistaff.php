@@ -42,7 +42,7 @@ include("connection.php");
                             <li>
                                 <hr class="dropdown-divider" />
                             </li>
-                            <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
+                            <li><a class="dropdown-item" href="http://localhost:8080/fyp3/">Logout</a></li>
                 </ul>
             </li>
         </ul>

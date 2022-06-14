@@ -36,7 +36,7 @@
                     <li>
                         <hr class="dropdown-divider" />
                     </li>
-                    <li><a class="dropdown-item" href="fyp3/index.php">Logout</a></li>
+                    <li><a class="dropdown-item" href="http://localhost:8080/fyp3/">Logout</a></li>
                 </ul>
             </li>
         </ul>
@@ -65,7 +65,7 @@
                                 <a class="nav-link" href="pelajar.php">Pelajar</a>
                                 <a class="nav-link" href="staff.php">Staff</a>
                                
-                                <a class="nav-link" href="penasihat.php">Penasihat Akademik</a>
+                                <a class="nav-link" href="pa.php">Penasihat Akademik</a>
                             </nav>
                         </div>
                         <a class="nav-link" href="statistik.php">
