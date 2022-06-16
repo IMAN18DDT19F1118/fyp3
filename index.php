@@ -7,6 +7,9 @@
     <title>Login Page</title>
 </head>
 <style>
+label{
+  text-size-adjust: 10px;
+}
 body{   
     background: #eee;  
     background: url(img/imagee.jpg);
@@ -91,24 +94,28 @@ h2{
     font-size : 55px;
     background-color: aqua;
 }
+label{
+  font-size: 20px;
+  
+}
 </style>
 <body> 
     <center> 
     <h2>Sistem Kaunseling PTSS</h2>
 </center>
     <div id = "frm" class ="form">  
-        <h1>LOGIN</h1>  
+        <h1>LOG MASUK</h1>  
         <form name="f1" action = "login.php" onsubmit = "return validation()" method = "POST">  
             <p>  
-                <label> Username </label>  
+                <label> Nama Pengguna : </label>  
                 <input type = "text" id ="ic" name  = "ic_admin" required />  
             </p>  
             <p>  
-                <label> Password: </label>  
+                <label> Katalaluan : </label>  
                 <input type = "password" id ="pass" name  = "pass" required />  
             </p>  
             <p>     
-                <input type =  "submit" id = "btn" value = "Login" name ="login"/>  
+                <input type =  "submit" id = "btn" value = "LOG MASUK" name ="login"/>  
             </p>  
         </form>  
     </div>  

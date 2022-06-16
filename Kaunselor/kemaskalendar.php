@@ -104,7 +104,7 @@
 
                                             <div class="input_wrap">
                                                 <label for="utarikh">Tarikh :</label>
-                                                <input style="" type="date" id="utarikh" name="utarikh">
+                                                <input type="date" id="utarikh" name="utarikh">
                                             </div>
 
                                             <div class="input_wrap">

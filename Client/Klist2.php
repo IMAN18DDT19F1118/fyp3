@@ -105,39 +105,53 @@ tr:hover {
                         <div class="row">
 
                         <table border="1">
-        <tr>
-            
-            <th>Nama Kaunselor</th>
-            <th>Perkara</th>
-            <th>Tarikh</th>
-            <th>Masa</th>
-            <th>Tempoh</th>
-        </tr>
+                            <tr>
 
-        <?php
-        if(mysqli_num_rows($result)>0)
-        {
-            while($row = mysqli_fetch_assoc($result)){
-                
-                ?>
+                                <th>Nama Kaunselor</th>
+                                <th>Perkara</th>
+                                <th>Tarikh</th>
+                                <th>Masa</th>
+                                <th>Tempoh</th>
+                            </tr>
 
-                <tr>
-                   
-                    <td><?php echo $row["Nama_kauns"]; ?></td>
-                    <td><?php echo $row["perkara"]; ?></td>                    
-                    <td><?php echo $row["tarikh"]; ?></td>                    
-                    <td><?php echo $row["masa"]; ?></td>                    
-                    <td><?php echo $row["tempoh"]; ?></td>
-                </tr>
-            <?php
-            }
-        }
-        else{
-            echo "0 results";
-        }
-        mysqli_close($conn);
-        ?>
-    </table>
+                            <?php
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $idnamakaunselor = $row['idnamakaunselor'];
+                                    $perkara = $row['perkara'];
+                                    $tarikh = $row['tarikh'];
+                                    $masa = $row['masa'];
+                                    $tempoh = $row['tempoh'];
+                                    
+
+                                    $sql = "SELECT * FROM kaunselor WHERE IcKaunselor =" . $idnamakaunselor;
+                                    $result3 = $conn->query($sql);
+                                    if (mysqli_num_rows($result3) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result3)) {
+                                      $nama = $row['Nama'];
+
+                            ?>
+                                            <tr>
+
+                                                <td><?php echo $nama; ?></td>
+                                                <td><?php echo $perkara; ?></td>
+                                                <td><?php echo $tarikh; ?></td>
+                                                <td><?php echo $masa; ?></td>
+                                                <td><?php echo $tempoh; ?></td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                }
+                            } else {
+                                echo "0 results";
+                            }
+
+
+                            ?>
+                        </table>
                         </div>
                 </main>
             </div>

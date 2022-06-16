@@ -45,13 +45,16 @@ $result = $conn->query($sql);
     tr:hover {
         background: #d1d1d1;
     }
-    .lulus{
+
+    .lulus {
         background-color: greenyellow;
     }
-    .gagal{
+
+    .gagal {
         background-color: red;
     }
-    .mid{
+
+    .mid {
         background-color: aqua;
     }
 </style>
@@ -127,7 +130,7 @@ $result = $conn->query($sql);
                                     <th>Nama Pelajar</th>
                                     <th>No Matrik</th>
                                     <th>Nama Kaunselor</th>
-                                    <th>Action</th>
+                                    <th>Tindakan</th>
                                 </tr>
 
                                 <?php
@@ -135,26 +138,27 @@ $result = $conn->query($sql);
                                     while ($row = mysqli_fetch_assoc($result)) {
                                         $id = $row["ID"];
                                         $id_kaunselor = $row["IC_Kaunselor"];
+                                        $pilihan = $row['pilihan'];
 
                                         //echo "id:".$row["id"].":".$row["name"]." ".$row["gender"]." ".$row["age"]." ".$row["cgpa"]."<br>";
                                 ?>
 
                                         <tr>
-                                        <?php
-                                        if ($row["pilihan"] == "Diluluskan") {
-                                        ?>
-                                            <td class="lulus"><?php echo $row["pilihan"]; ?></td>
-                                        <?php
-                                        } else if ($row["pilihan"] == "Tidak Diluluskan") {
-                                        ?>
-                                            <td class="gagal"><?php echo $row["pilihan"]; ?></td>
-                                        <?php
-                                        } else {
-                                        ?>
-                                            <td class="mid"><?php echo $row["pilihan"]; ?></td>
-                                        <?php
-                                        }
-                                        ?>
+                                            <?php
+                                            if ($row["pilihan"] == "Diluluskan") {
+                                            ?>
+                                                <td class="lulus"><?php echo $row["pilihan"]; ?></td>
+                                            <?php
+                                            } else if ($row["pilihan"] == "Tidak Diluluskan") {
+                                            ?>
+                                                <td class="gagal"><?php echo $row["pilihan"]; ?></td>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <td class="mid"><?php echo $row["pilihan"]; ?></td>
+                                            <?php
+                                            }
+                                            ?>
 
                                             <?php
                                             $id_pelajar = $row["IC_Pelajar"];
@@ -164,8 +168,6 @@ $result = $conn->query($sql);
                                                 while ($row = mysqli_fetch_assoc($result3)) {
                                                     $stud_name = $row["Nama"];
                                                     $stud_matrik = $row["NoPendaftaran"];
-
-
                                                 }
                                             }
 
@@ -173,23 +175,48 @@ $result = $conn->query($sql);
                                             <td><?php echo $stud_name ?></td>
                                             <td><?php echo $stud_matrik ?></td>
 
-                                           
 
-                            
+
+
                                             <?php
                                             $sql = "SELECT * FROM kaunselor WHERE ID = '" . $id_kaunselor . "'";
                                             $result3 = $conn->query($sql);
                                             if (mysqli_num_rows($result3) > 0) {
                                                 while ($row = mysqli_fetch_assoc($result3)) {
-                                                 $kaunselor_name = $row["Nama"];
+                                                    $kaunselor_name = $row["Nama"];
                                                 }
                                             }
                                             ?>
-                                            <td><?php echo $kaunselor_name?></td>
-                                            <td>
-                                            <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
-                                                <button type="submit">Laporan</button></a>
-                                            </td>
+                                            <td><?php echo $kaunselor_name ?></td>
+                                            <?php
+                                            if ($pilihan == "Diluluskan") {
+                                            ?>
+                                                <td>
+                                                    <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                        <button type="submit">Laporan</button></a>
+                                                </td>
+
+                                            <?php
+                                            } else if ($pilihan == "Tidak Diluluskan") {
+                                            ?>
+                                                <td>
+                                                    <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                        <button type="submit" disabled>Laporan</button></a>
+                                                </td>
+
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <td>
+                                                    <a href="laporan.php?id=<?php echo $id; ?>" onclick="return comfirm('Anda pasti untuk hapus?')">
+                                                        <button type="submit" disabled>Laporan</button></a>
+                                                </td>
+
+                                            <?php
+                                            }
+
+                                            ?>
+                                
 
                                         </tr>
                                 <?php

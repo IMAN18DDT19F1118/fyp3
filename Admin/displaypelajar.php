@@ -123,7 +123,7 @@ tr:hover {
             <th>No Pendaftaran</th>
             <th>Email</th>
             
-            <th>Action</th>
+            <th>Tindakan</th>
         </tr>
 
         <?php
@@ -142,9 +142,9 @@ tr:hover {
                     <td><?php echo $row["email"]; ?></td>                   
                     
                     <td>
-                        <a href="updatepelajar.php?id=<?php echo $row["ID"]; ?>">Update</a>
+                        <a href="updatepelajar.php?id=<?php echo $row["ID"]; ?>">Kemaskini</a>
 
-                        <a href="deletepelajar.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
+                       
                     </td>
                 </tr>
             <?php

@@ -8,7 +8,7 @@ $umasa=$_POST['masau'];
 $utempoh=$_POST['tempohu'];
 $uidusr=$_POST['id'];//drp input hidden
 
-$sql = "UPDATE kauns SET perkara='$uperkara',tarikh='$utarikh',masa='$umasa',tempoh='$utempoh' where id='$uidusr'";
+$sql = "UPDATE kaunseloraction SET perkara='$uperkara',tarikh='$utarikh',masa='$umasa',tempoh='$utempoh' where id='$uidusr'";
 
 if($conn->query($sql)===TRUE){
     echo "Order has been update successfully";

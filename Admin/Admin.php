@@ -83,7 +83,7 @@
                        
                         <h1>Selamat Datang</h1>
                             <br><br><br>
-                            <h1>Senarai nama kaunelor PTSS</h1>
+                            <h1>Senarai nama kaunselor PTSS</h1>
                             <br><br><br>
                             <img src="img/image1.jpeg" alt="" width="20%" height="200">
                             <p><h4>KETUA UNIT PENGURUSAN PSIKOLOGI </h4></p>

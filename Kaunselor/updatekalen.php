@@ -2,7 +2,7 @@
 include('connection.php');
 
 $idusr = $_GET["id"];
-$dis_usr = "SELECT * FROM kauns WHERE ID='$idusr'";
+$dis_usr = "SELECT * FROM kaunseloraction WHERE ID='$idusr'";
 $resultusr = $conn->query($dis_usr);
 
 $row = $resultusr->fetch_assoc();
@@ -143,7 +143,7 @@ $row = $resultusr->fetch_assoc();
 
                                             <div class="input_wrap">
                                                 <input type="reset" value="Batal" name="cancelbtn" class="submit_btn">
-                                                <input type="hidden" name="id" value="<?php echo $row["id"]; ?>">
+                                                <input type="hidden" name="id" value="<?php echo $row["ID"]; ?>">
                                             </div>
 
                                         </div>

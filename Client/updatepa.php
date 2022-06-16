@@ -79,48 +79,48 @@ $row = $resultusr->fetch_assoc();
         </div>
         <div id="layoutSidenav_content">
             <main>
-            <main>
-                <div class="container-fluid px-4">
+            <div class="container-fluid px-4">
                     <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                    <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item active">Kemaskini</li>
+                    <ol>
+                        <li class="breadcrumb-item active">Borang TemuJanji</li>
                     </ol>
                     <div class="row">
                         <div class="wrapper">
-                            <div class=registration_from>
-
+                            <div class="registration_form">
+                                <!--Title-->
                                 <div class="title">
-                                    Kemaskini temujanji
+                                    Temu Janji Kaunseling
                                 </div>
-
-                                <form name="temujanji" action="updateprocess.php" method="post">
-
-                                    <div class="input_wrap">
-                                        <Label for="tarikh">Tarikh :</Label>
-                                        <input type="date" name="date" value="<?php echo $row["tarikh"]; ?>" required>
-                                    </div>
-
-                                    <div class="input_wrap">
-                                        <label for="masau">Masa :</label>
-                                        <input type="time" id="schedule_time" name="schedule_time" value="<?php echo $row["masa"]; ?>" required>
-                                    </div>
+                                <br><br>
+                                <!-- Form -->
+                                <div>
+                                <form name="temujanji" action="updateprocess2.php" method="post">
+                                        <div class="input_wrap">
+                                            <label for="temujanji">TemuJanji :</label><br>
+                                            <input type="date" id="temujanji" name="date" value="<?php echo $row["tarikh"]; ?>"  required>
+                                
 
 
-                                    <br>
+                                            <label for="schedule_time">Masa :</label>
+                                            <input type="time" id="schedule_time" name="schedule_time" value="<?php echo $row["masa"]; ?>" required>
+                                        </div>
+                                        <br><br>
+                                        <!--Submit button-->
+                                        <div class="view">
+                                            <input type="submit" value="Kemaskini" class="submit_btn" name="submit">
+                                            <br><br>
+                                        </div>
+                                        <div class="setup">
+                                            <input type="reset" value="Set semula" class="reset_btn">
+                                            <input type="hidden" name="id" value="<?php echo $row["ID"]; ?>">
+                                        </div>
 
-                                    <div class="input_wrap">
-                                        <input type="submit" name="Submit" value="Update">
-                                    </div><br>
-                                    <div class="input_wrap">
-                                        <input type="reset" value="Reset">
-                                        <input type="hidden" name="id" value="<?php echo $row["ID"]; ?>">
-                                    </div><br>
-
-                                </form>
+                                    </form>
+                                </div>
                             </div>
-
-
                         </div>
+                    </div>
+                </div>
             </main>
         </div>
     </div>

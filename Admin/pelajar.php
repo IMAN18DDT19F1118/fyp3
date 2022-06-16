@@ -105,26 +105,26 @@
                                 <form method = "POST" action="addpelajar.php">
                                     <div class="form_wrap">
                                     <div class="input_wrap">
-                                            <label for="icpelajar">IC </label>
-                                            <input type="text" id="ic"  name  = "ic" required>
+                                            <label for="icpelajar">Kad Pengenalan </label>
+                                            <input type="text" id="ic"  name  = "ic" placeholder="000000000000" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="fnama">Nama Penuh </label>
-                                            <input type="text" id="fnama"  name  = "fnama" required>
+                                            <input type="text" id="fnama"  name  = "fnama" placeholder="Nama penuh anda" required>
                                         </div>
 
                                         <!-- City Name input place -->
                                         <div class="input_wrap">
                                             <label for="passw">Kata Laluan</label>
-                                            <input type="password" id="passw"  name  = "passw" required>
+                                            <input type="password" id="passw"  name  = "passw" placeholder="********" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="notel">No Telefon</label>
-                                            <input type="text" id="notel"  name  = "notel" required>
+                                            <input type="text" id="notel"  name  = "notel" placeholder="No telefon anda" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="nopend">No Pendaftaran</label>
-                                            <input type="text" id="nopend"  name  = "nopend" required >
+                                            <input type="text" id="nopend"  name  = "nopend" placeholder="No pendaftaran pelajar" required >
                                         </div>
                                         <div class="input_wrap">
                                             <label for="email">Email</label>

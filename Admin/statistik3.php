@@ -143,7 +143,7 @@ while ($row = mysqli_fetch_array($result)) {
                     </ol>
                     <div class="row">
                         <div style="width:60%; height:50%; text-align:center">
-                            <h3 class="page-header"> Tarikh & Masa </h3>
+                            <h3 class="page-header"> Bilangan temujanji diluluskan </h3>
                             <div>Statitik</div>
                             <canvas id="chartjs_bar"></canvas>
                         </div>

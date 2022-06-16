@@ -1,20 +1,49 @@
 <?php
-include('connection.php');
 
-$sql = "SELECT * FROM temu_janji WHERE pilihan = 'Diluluskan' ";
+
+include('connection.php');
+$tahun = date("Y");
+if (isset($_GET['tahun'])) {
+    $tahun = $_GET['tahun'];
+}
+
+$sql = "SELECT * FROM temu_janji WHERE pilihan = 'Diluluskan' AND tarikh LIKE '$tahun%'";
 $result = mysqli_query($conn, $sql);
 $chart_data = "";
+$bulan_name = ["Jan", "Feb", "Mar", "Apr", "May", "June", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
+$total_temujanji = [];
+for ($i = 0; $i < 12; $i++) {
+    $total_temujanji[$i] = 0;
+}
+
+while ($row = mysqli_fetch_assoc($result)) {
+    $month = explode("-", $row['tarikh']);
+    for ($i = 0; $i < 12; $i++) {
+        if ($month[1] == ($i + 1)) {
+            $total_temujanji[$i] = $total_temujanji[$i] + 1;
+        }
+    }
+}
+
+
+/*
+$i = 0;
 while ($row = mysqli_fetch_array($result)) {
-    $masa[] = $row['ID'];
-    $pelajar[] = $row['IC_Pelajar'];
-    $tarikh[] = $row['tarikh'];
-    $pilihan[] = $row['pilihan'];
+    $masa[$i] = $row['ID'];
+    $pelajar[$i] = $row['IC_Pelajar'];
+    $tarikh[$i] = $row['tarikh'];
+    $pilihan[$i] = $row['pilihan'];
     $month = explode("-", $row['tarikh']);
 }
+*/
+
+//$bulan3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+//$data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+/*
 $count = 0;
-$bulan3 = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12);
-while ($count <= 12) {
+while ($count < 12) {
     if ($bulan3[1] == "01") {
         $bulan[$count] = "Januari";
     } else if ($bulan3[1] == "02") {
@@ -42,6 +71,7 @@ while ($count <= 12) {
     }
     $count++;
 }
+*/
 
 
 
@@ -158,13 +188,14 @@ while ($row = mysqli_fetch_array($result)) {
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="mt-4">Statistik</h1>
+                    
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active">Temujanji</li>
                     </ol>
                     <div class="row">
                         <div style="width:60%; height:50%; text-align:center">
-                            <h3 class="page-header"> Tarikh & Masa </h3>
-                            <div>Statitik</div>
+                            <h3 class="page-header"> Bilangan temujanji diluluskan </h3><br><br>
+                            <div></div>
                             <canvas id="chartjs_bar"></canvas>
                         </div>
                     </div>
@@ -201,7 +232,7 @@ while ($row = mysqli_fetch_array($result)) {
     var myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: <?php echo json_encode($bulan); ?>,
+            labels: <?php echo json_encode($bulan_name); ?>,
             datasets: [{
                 backgroundColor: [
                     "#5969ff",
@@ -209,10 +240,15 @@ while ($row = mysqli_fetch_array($result)) {
                     "#25d5f2",
                     "#ffc750",
                     "#2ec551",
+                    "#FFFF00",
+                    "#7FFFE8",
+                    "#033E3E",
+                    "#E2A76F",
+                    "#71E357",
                     "#7040fa",
                     "#ff004e"
                 ],
-                data: <?php echo json_encode($pelajar); ?>,
+                data: <?php echo json_encode($total_temujanji) ?>,
             }]
         },
         options: {

@@ -128,7 +128,7 @@ $row=$resultusr->fetch_assoc();
                                         </div>
                                         <div class="input_wrap">
                                             <label for="unotel">No Telefon</label>
-                                            <input type="text" id="unotel"  name  = "unotel"  value="<?php echo $row["NoTel"];?>" required>
+                                            <input type="text" id="unotel"  name  = "unotel"  value="******" required>
                                         </div>
                                         
                                         <div class="input_wrap">

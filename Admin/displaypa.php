@@ -121,7 +121,7 @@ tr:hover {
             <th>Nama</th>
             <th>No Telefon</th>
             
-            <th>Action</th>
+            <th>Tindakan</th>
         </tr>
 
         <?php
@@ -138,9 +138,9 @@ tr:hover {
                     <td><?php echo $row["No_tel"]; ?></td>                
                     
                     <td>
-                        <a href="updatepa.php?id=<?php echo $row["ID"]; ?>">Update</a>
+                        <a href="updatepa.php?id=<?php echo $row["ID"]; ?>">Kemaskini</a>
 
-                        <a href="deletepa.php?id=<?php echo $row["ID"]; ?>" onclick="return comfirm('Are you sure want to delete this info?')">Delete</a>
+                       
                     </td>
                 </tr>
             <?php

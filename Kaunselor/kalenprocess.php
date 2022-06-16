@@ -6,10 +6,12 @@ $perkara=$_POST['uperkara'];
 $tarikh=$_POST['utarikh'];
 $masa=$_POST['umasa'];
 $tempoh=$_POST['utempoh'];
+session_start();
+$kaunselorid = $_SESSION['ic'];
 
 
 {
-    $sql="INSERT INTO kaunseloraction(perkara,tarikh,masa,tempoh)VALUES('$perkara','$tarikh','$masa','$tempoh')";//create command not execute yet
+    $sql="INSERT INTO kaunseloraction(idnamakaunselor, perkara,tarikh,masa,tempoh)VALUES('$kaunselorid', '$perkara','$tarikh','$masa','$tempoh')";//create command not execute yet
 
     //execute
     if($conn->query($sql)===TRUE){

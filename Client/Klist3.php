@@ -5,7 +5,7 @@ $sql = "SELECT * FROM kaunseloraction";
 //$result = mysqli_query($conn,$sql);
 
 //opyion2
-$result=$conn->query($sql);
+$result = $conn->query($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,25 +23,27 @@ $result=$conn->query($sql);
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 </head>
 <style>
-table {
-  border-collapse: collapse;
-}
- th {
-  background: lightblue;
-}
+    table {
+        border-collapse: collapse;
+    }
 
-th, td {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
+    th {
+        background: lightblue;
+    }
 
-tr:nth-child(even) {
-  background: #efefef;
-}
+    th,
+    td {
+        border: 1px solid #ccc;
+        padding: 8px;
+    }
 
-tr:hover {
-  background: #d1d1d1;
-}
+    tr:nth-child(even) {
+        background: #efefef;
+    }
+
+    tr:hover {
+        background: #d1d1d1;
+    }
 </style>
 
 <body class="sb-nav-fixed">
@@ -87,7 +89,7 @@ tr:hover {
                             <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                             Temujanji
                         </a>
-               
+
                         <a class="nav-link" href="rekord.php">
                             <div class="sb-nav-link-icon"><i class="fas fa-commenting"></i></div>
                             Laporan kaunseling pelajar
@@ -102,48 +104,62 @@ tr:hover {
         </div>
         <div id="layoutSidenav_content">
             <main>
-            <div class="container-fluid px-4">
-                        <h1 class="mt-4">Unit Kaunseling PTSS</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active"> Senarai tarikh ketidaksediaan kaunselor</li>
-                        </ol>
-                        <div class="row">
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4">Unit Kaunseling PTSS</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active"> Senarai tarikh ketidaksediaan kaunselor</li>
+                    </ol>
+                    <div class="row">
 
                         <table border="1">
-        <tr>
-            
-            <th>Nama Kaunselor</th>
-            <th>Perkara</th>
-            <th>Tarikh</th>
-            <th>Masa</th>
-            <th>Tempoh</th>
-        </tr>
+                            <tr>
 
-        <?php
-        if(mysqli_num_rows($result)>0)
-        {
-            while($row = mysqli_fetch_assoc($result)){
-                
-                ?>
+                                <th>Nama Kaunselor</th>
+                                <th>Perkara</th>
+                                <th>Tarikh</th>
+                                <th>Masa</th>
+                                <th>Tempoh</th>
+                            </tr>
 
-                <tr>
-                   
-                    <td><?php echo $row["Nama_kauns"]; ?></td>
-                    <td><?php echo $row["perkara"]; ?></td>                    
-                    <td><?php echo $row["tarikh"]; ?></td>                    
-                    <td><?php echo $row["masa"]; ?></td>                    
-                    <td><?php echo $row["tempoh"]; ?></td>
-                </tr>
-            <?php
-            }
-        }
-        else{
-            echo "0 results";
-        }
-        mysqli_close($conn);
-        ?>
-    </table>
-                        </div>
+                            <?php
+                            if (mysqli_num_rows($result) > 0) {
+                                while ($row = mysqli_fetch_assoc($result)) {
+                                    $idnamakaunselor = $row['idnamakaunselor'];
+                                    $perkara = $row['perkara'];
+                                    $tarikh = $row['tarikh'];
+                                    $masa = $row['masa'];
+                                    $tempoh = $row['tempoh'];
+                                    
+
+                                    $sql = "SELECT * FROM kaunselor WHERE IcKaunselor =" . $idnamakaunselor;
+                                    $result3 = $conn->query($sql);
+                                    if (mysqli_num_rows($result3) > 0) {
+                                        while ($row = mysqli_fetch_assoc($result3)) {
+                                      $nama = $row['Nama'];
+
+                            ?>
+                                            <tr>
+
+                                                <td><?php echo $nama; ?></td>
+                                                <td><?php echo $perkara; ?></td>
+                                                <td><?php echo $tarikh; ?></td>
+                                                <td><?php echo $masa; ?></td>
+                                                <td><?php echo $tempoh; ?></td>
+                                            </tr>
+                                    <?php
+                                        }
+                                    } else {
+                                        echo "0 results";
+                                    }
+                                }
+                            } else {
+                                echo "0 results";
+                            }
+
+
+                            ?>
+                        </table>
+                    </div>
             </main>
         </div>
     </div>

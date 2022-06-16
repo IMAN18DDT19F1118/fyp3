@@ -133,7 +133,7 @@ $result = $conn->query($sql);
                                 <th>Status</th>
                                 <th>Nama Pelajar</th>
                                 <th>No Matrik</th>
-                                <th>Action</th>
+                                <th>Tindakan</th>
                             </tr>
 
                             <?php

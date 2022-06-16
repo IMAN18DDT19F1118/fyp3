@@ -107,22 +107,22 @@
 
                                         
                                         <div class="input_wrap">
-                                            <label for="ic">IC </label>
-                                            <input type="text" id="ic"  name= "ic" required>
+                                            <label for="ic">Kad Pengenalan </label>
+                                            <input type="text" id="ic"  name= "ic" placeholder="000000000000" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="fnama">Nama Penuh </label>
-                                            <input type="text" id="fnama"  name ="fnama" required>
+                                            <input type="text" id="fnama"  name ="fnama" placeholder="Nama penuh anda" required>
                                         </div>
 
                                         
                                         <div class="input_wrap">
                                             <label for="passw">Kata Laluan</label>
-                                            <input type="password" id="passw"  name ="passw" required>
+                                            <input type="password" id="passw"  name ="passw" placeholder="*******" required>
                                         </div>
                                         <div class="input_wrap">
                                             <label for="notel">No Telefon</label>
-                                            <input type="text" id="notel"  name  = "notel" required>
+                                            <input type="text" id="notel"  name  = "notel" placeholder="No Telefon " required>
                                         </div>
 
                                     
